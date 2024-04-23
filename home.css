@@ -41,6 +41,7 @@ body {
   text-decoration: none;
 }
 #main #second .links .thisa {
+  color: black;
   border-bottom: 1px solid #549f58;
   padding-bottom: 5px;
   font-weight: 600;
