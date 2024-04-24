@@ -8,11 +8,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <link rel="stylesheet" href="home.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>DT Market</title>
   </head>
   <body>
@@ -33,17 +28,10 @@
         <img src="./public/dt.png" alt="Logo" class="logo" />
         <!-- Big navbar -->
         <nav class="links">
-<<<<<<< HEAD
-          <a href="/" class="thisa">Home</a>
-          <a href="/" class="othera">All products</a>
-          <a href="/" class="othera">Video reviews</a>
-          <a href="/about.html" class="othera">About Us</a>
-=======
-          <a href="/home.html" class="thisa">Home</a>
-          <a href="/products.html" class="othera">All products</a>
+          <a href="/home.html" class="othera">Home</a>
+          <a href="/products.html" class="thisa">All products</a>
           <a href="/videos.html" class="othera">Video reviews</a>
           <a href="/" class="othera">About Us</a>
->>>>>>> origin
         </nav>
         <div class="buttons">
           <button type="button" class="likeButton">
@@ -59,56 +47,22 @@
           <button type="button" class="loginbtn">Login</button>
         </div>
       </div>
-    </div>
 
-    <!-- SWIPERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR -->
-    <div class="carusel">
-      <div class="swiper">
-        <div class="swiper-wrapper"></div>
-        <div class="swiper-pagination"></div>
+      <!-- Third -->
+      <div id="third">
+        <h1>
+          <a href="/home.html" class="home">Home</a> |
+          <a href="/products.html" class="allproducts">All Products</a>
+        </h1>
       </div>
     </div>
 
     <!-- PRODUCTSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSsssssssssssssssssssssssssss -->
     <div class="title">
-      <h1>New Products</h1>
+      <h1>All Products</h1>
     </div>
 
     <div class="wrapper">
-      <div class="card">
-        <img
-          src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
-          alt=""
-          class="card_image"
-        />
-        <p class="card_description">Стиральная машина Samsung WW70AGAS22AELD</p>
-        <p class="card_price">8 000 000 som/sht</p>
-        <div class="card_footer">
-          <button class="card_button">Add to basket</button>
-          <i class="fa-regular fa-heart"></i>
-        </div>
-      </div>
-    </div>
-
-    <!-- POPULARRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRSssssssssssssssssssssss -->
-    <div class="title">
-      <h1>Popular Products</h1>
-    </div>
-
-    <div class="wrapper">
-      <div class="card">
-        <img
-          src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
-          alt=""
-          class="card_image"
-        />
-        <p class="card_description">Стиральная машина Samsung WW70AGAS22AELD</p>
-        <p class="card_price">8 000 000 som/sht</p>
-        <div class="card_footer">
-          <button class="card_button">Add to basket</button>
-          <i class="fa-regular fa-heart"></i>
-        </div>
-      </div>
       <div class="card">
         <img
           src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
@@ -172,35 +126,7 @@
 </html>
 
 <script type="module">
-  import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
-  const swiperWrapper = document.querySelector(".swiper-wrapper");
-  const slides = [
-    "https://www.iphones.ru/wp-content/uploads/2024/02/iPhone-16-Camera-Lozenge-2-Colors.jpg",
-    "https://media.wired.com/photos/65bd689b6430bf70b2a79a6e/16:9/w_2400,h_1350,c_limit/Google%20Pixel%208%20and%20Pixel%208%20Pro%20SOURCE%20Julian%20Chokkattu.jpg",
-    "https://hamariweb.com/images/featured/10833_fb.gif",
-    "https://cdn11.dienmaycholon.vn/filewebdmclnew/public/userupload/files/Knms/di-dong/1-xiaomi-redmi-note-13-series-gia-bao-nhieu.jpg",
-    "https://media.wired.com/photos/6202b99c2c286ef2d70b5b0a/16:9/w_2177,h_1225,c_limit/Gear-Samsung-Galaxy-S22-Ultra.jpg",
-  ];
-  slides.forEach((slide) => {
-    const slideElement = document.createElement("div");
-    slideElement.classList.add("swiper-slide");
-    slideElement.style.backgroundImage = `url(${slide})`;
-
-    swiperWrapper.appendChild(slideElement);
-  });
-  const swiper = new Swiper(".swiper", {
-    loop: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    autoplay: {
-      delay: 5000,
-    },
-  });
-
-  const w = document.querySelectorAll(".wrapper");
-  const wrapper = w[0];
+  const wrapper = document.querySelector(".wrapper");
   const products = [
     {
       image:
@@ -213,30 +139,6 @@
         "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1PJSHEimeve8vtIC_hVoIiHEYyjJ3FC6WoPwKtFSbfaNlwwmTxlI1sS_WXWT-eduj",
       price: 8000000,
       desc: "Игровая приставка Sony PlayStation 5 Slim, с дисководом, 1 ТБ, два геймпада",
-    },
-    {
-      image:
-        "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6",
-      price: 7100000,
-      desc: "Стиральная машина Samsung WW70AGAS22AELD",
-    },
-    {
-      image:
-        "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6",
-      price: 7100000,
-      desc: "Стиральная машина Samsung WW70AGAS22AELD",
-    },
-    {
-      image:
-        "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6",
-      price: 7100000,
-      desc: "Стиральная машина Samsung WW70AGAS22AELD",
-    },
-    {
-      image:
-        "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6",
-      price: 7100000,
-      desc: "Стиральная машина Samsung WW70AGAS22AELD",
     },
     {
       image:
@@ -289,4 +191,3 @@
     wrapper.appendChild(productElement);
   });
 </script>
-

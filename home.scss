@@ -5,18 +5,25 @@ $green_pale: #549f58c5;
 $gray: #898989;
 $white: #ffff;
 $header_background: #282d30;
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
+
 body {
   font-family: sans-serif;
   background-color: $background;
   font-size: 14px;
 }
 
+<<<<<<< HEAD
+=======
+// HEADER
+>>>>>>> origin
 #main {
+  position: relative;
   #first {
     display: flex;
     justify-content: space-between;
@@ -40,7 +47,11 @@ body {
     top: 0; /* Adjust this value as needed */
     display: flex;
     padding: 16px 10%;
+<<<<<<< HEAD
     background-color: $white;
+=======
+    position: sticky;
+>>>>>>> origin
     align-items: center;
     z-index: 100;
     justify-content: space-between;
@@ -58,6 +69,7 @@ body {
         border-bottom: 1px solid $green;
         padding-bottom: 5px;
         font-weight: 600;
+        color: black;
       }
       .othera {
         color: $gray;
@@ -98,6 +110,30 @@ body {
     }
   }
 
+<<<<<<< HEAD
+=======
+  #third {
+    padding: 16px 10%;
+    border-bottom: 1px solid $border_color;
+    h1 {
+      display: flex;
+      gap: 5px;
+      font-size: 12px;
+    }
+    .home {
+      text-decoration: none;
+      color: #777;
+    }
+    .allproducts {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .logo {
+    width: 50px;
+  }
+>>>>>>> origin
   option {
     background-color: $white;
     color: black;
@@ -230,6 +266,7 @@ body {
   h1 {
     font-size: 44px;
   }
+<<<<<<< HEAD
   h4 {
     color: $gray;
     margin-top: 18px;
@@ -335,6 +372,13 @@ body {
         border: none;
       }
     }
+=======
+  h2 {
+    margin-top: 20px;
+    font-size: 16px;
+    color: $gray;
+    margin-bottom: 100px;
+>>>>>>> origin
   }
 }
 
