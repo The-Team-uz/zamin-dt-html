@@ -31,7 +31,7 @@
       </div>
 
       <!-- Second -->
-      <div id="second">
+      <div id="second" class="fix">
         <img src="./public/dt.png" alt="Logo" class="logo" />
         <!-- Big navbar -->
         <nav class="links">
@@ -172,6 +172,8 @@
 </html>
 
 <script type="module">
+
+
   import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
   const swiperWrapper = document.querySelector(".swiper-wrapper");
   const slides = [
@@ -194,6 +196,7 @@
       el: ".swiper-pagination",
       clickable: true,
     },
+
     autoplay: {
       delay: 5000,
     },

@@ -27,3 +27,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+window.addEventListener("scroll", function () {
+  var scrollPosition = window.scrollY;
+  var fixedDiv = document.getElementById("second");
+  var firstDiv = document.getElementById("first");
+
+  if (scrollPosition > firstDiv.offsetHeight) {
+    fixedDiv.classList.add("fixed");
+  } else {
+    fixedDiv.classList.remove("fixed");
+  }
+});

@@ -10,6 +10,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <script src="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js
+"></script>
+    <link
+      href="
+https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- HEADERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR -->
@@ -59,8 +68,66 @@
     </div>
 
     <div class="single_product">
-      <div class="product_wrapper">aa</div>
-      <div class="basket_wrapper">aaa</div>
+    <div class="product_wrapper">
+    <section id="main-carousel" class="splide" aria-label="My Awesome Gallery">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5dilqatTtzdoJXITTxpjlgVkzI4m0kNbtfhP2SNJrLw&s"
+              alt=""
+            />
+          </li>
+          <li class="splide__slide">
+            <img
+              src="https://img.global.news.samsung.com/in/wp-content/uploads/2022/04/SM-M536_Galaxy-M53-5G_Blue_FrontBack_RGB-min.png"
+              alt=""
+            />
+          </li>
+          <li class="splide__slide">
+            <img
+              src="https://images.samsung.com/is/image/samsung/p6pim/pt/sm-m536bzbgeub/gallery/pt-galaxy-m53-5g-sm-m536-sm-m536bzbgeub-thumb-532065549"
+              alt=""
+            />
+          </li>
+          <li class="splide__slide">
+            <img
+              src="https://images.samsung.com/is/image/samsung/p6pim/africa_en/2401/gallery/africa-en-galaxy-s24-s928-sm-s928bztcafb-thumb-539414176?$344_344_PNG$"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <ul id="thumbnails" class="thumbnails">
+      <li class="thumbnail">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5dilqatTtzdoJXITTxpjlgVkzI4m0kNbtfhP2SNJrLw&s"
+          alt=""
+        />
+      </li>
+      <li class="thumbnail">
+        <img
+          src="https://img.global.news.samsung.com/in/wp-content/uploads/2022/04/SM-M536_Galaxy-M53-5G_Blue_FrontBack_RGB-min.png"
+          alt=""
+        />
+      </li>
+      <li class="thumbnail">
+        <img
+          src="https://images.samsung.com/is/image/samsung/p6pim/pt/sm-m536bzbgeub/gallery/pt-galaxy-m53-5g-sm-m536-sm-m536bzbgeub-thumb-532065549"
+          alt=""
+        />
+      </li>
+      <li class="thumbnail">
+        <img
+          src="https://images.samsung.com/is/image/samsung/p6pim/africa_en/2401/gallery/africa-en-galaxy-s24-s928-sm-s928bztcafb-thumb-539414176?$344_344_PNG$"
+          alt=""
+        />
+      </li>
+    </ul>
+    </div>
+    <div class="basket_wrapper">aaa</div>
     </div>
     <div id="footer">
       <!-- First -->
@@ -112,22 +179,62 @@
     </div>
   </body>
 </html>
+
 <script>
-  // Get the URL parameters
-  const urlParams = new URLSearchParams(window.location.search);
+  var splide = new Splide("#main-carousel", {
+    pagination: false,
+  });
 
-  // Retrieve data from the URL parameters
-  const image = urlParams.get("image");
-  const price = urlParams.get("price");
-  const desc = urlParams.get("desc");
-  const images = image.split(",");
+  var thumbnails = document.getElementsByClassName("thumbnail");
+  var current;
 
-  //   Use the retrieved data as needed
-  // document.write("<h2>Product Details</h2>");
-//   document.write(`<img src="${images[0]}"/>`);
-  // document.write(`<img src="${images[1]}"/>`);
-  // document.write(`<img src="${images[2]}"/>`);
+  for (var i = 0; i < thumbnails.length; i++) {
+    initThumbnail(thumbnails[i], i);
+  }
 
-  // document.write("<p>Price: " + price + "</p>");
-  // document.write("<p>Description: " + desc + "</p>");
+  function initThumbnail(thumbnail, index) {
+    thumbnail.addEventListener("click", function () {
+      splide.go(index);
+    });
+  }
+
+  splide.on("mounted move", function () {
+    var thumbnail = thumbnails[splide.index];
+
+    if (thumbnail) {
+      if (current) {
+        current.classList.remove("is-active");
+      }
+
+      thumbnail.classList.add("is-active");
+      current = thumbnail;
+    }
+  });
+
+  splide.mount();
 </script>
+<style>
+  .thumbnails {
+    display: flex;
+    margin: 1rem auto 0;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .thumbnail {
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    list-style: none;
+    margin: 0 0.2rem;
+    cursor: pointer;
+  }
+
+  .thumbnail img {
+    width: 100%;
+    height: auto;
+  }
+  img{
+    width: 100px;
+  }
+</style>
