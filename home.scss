@@ -16,6 +16,10 @@ body {
   font-family: sans-serif;
   background-color: $background;
   font-size: 14px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 // HEADER
@@ -256,12 +260,7 @@ body {
   h1 {
     font-size: 44px;
   }
-  h2 {
-    margin-top: 20px;
-    font-size: 16px;
-    color: $gray;
-    margin-bottom: 100px;
-  }
+ 
   h4 {
     color: $gray;
     margin-top: 18px;
@@ -269,75 +268,42 @@ body {
   }
 }
 
-  //////////////// About  us /////////////////
-  .about_wrapper {
-    padding: 0 10%;
+//////////////// About  us /////////////////
+.about_wrapper {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .requisites {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    .requisites {
+    gap: 35px;
+    border: 1px solid $border_color;
+    padding: 30px;
+    border-radius: 1rem;
+    .req_second {
+      height: 100px;
       display: flex;
-      flex-direction: column;
-      gap: 35px;
-      border: 1px solid $border_color;
-      padding: 30px;
-      border-radius: 1rem;
-      .req_second {
-        height: 100px;
+      gap: 25px;
+      .req_logo {
+        width: 150px;
+        border: 0.5px solid $border_color;
+        border-radius: 1rem;
         display: flex;
-        gap: 25px;
-        .req_logo {
-          width: 150px;
-          border: 0.5px solid $border_color;
-          border-radius: 1rem;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        justify-content: center;
+        align-items: center;
 
-          .logo {
-            width: 100px;
-          }
-        }
-        .req_second_wrap {
-          display: flex;
-          gap: 200px;
-          .req_second_item {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            .element {
-              display: flex;
-              flex-direction: column;
-              gap: 5px;
-              h4 {
-                font-weight: 100;
-                color: $gray;
-              }
-            }
-          }
+        .logo {
+          width: 100px;
         }
       }
-      .req_third {
+      .req_second_wrap {
         display: flex;
-        flex-direction: column;
-        gap: 25px;
-        color: $gray;
-        font-weight: 600;
-      }
-    }
-    .about {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid $border_color;
-      padding: 30px;
-      border-radius: 1rem;
-      .second {
-        display: flex;
-        justify-content: space-between;
-        .second_item {
+        gap: 200px;
+        .req_second_item {
           display: flex;
           flex-direction: column;
-          justify-content: space-evenly;
+          justify-content: space-between;
           .element {
             display: flex;
             flex-direction: column;
@@ -346,83 +312,116 @@ body {
               font-weight: 100;
               color: $gray;
             }
-            .socials {
-              display: flex;
-              gap: 15px;
-              i {
-                padding: 8px;
-              }
-              i:hover {
-                background-color: #549f58;
-                cursor: pointer;
-                color: white;
-                border-radius: 5px;
-                transition: all ease-in-out 0.2s;
-              }
+          }
+        }
+      }
+    }
+    .req_third {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      color: $gray;
+      font-weight: 600;
+    }
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $border_color;
+    padding: 30px;
+    border-radius: 1rem;
+    .second {
+      display: flex;
+      justify-content: space-between;
+      .second_item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        .element {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          h4 {
+            font-weight: 100;
+            color: $gray;
+          }
+          .socials {
+            display: flex;
+            gap: 15px;
+            i {
+              padding: 8px;
+            }
+            i:hover {
+              background-color: #549f58;
+              cursor: pointer;
+              color: white;
+              border-radius: 5px;
+              transition: all ease-in-out 0.2s;
             }
           }
         }
-        iframe:focus {
-          outline: none;
-          border: none;
-        }
+      }
+      iframe:focus {
+        outline: none;
+        border: none;
       }
     }
   }
+}
 
-  // // // // // FOoter
-  #footer {
-    margin-top: 50px;
-    border-top: 1px solid #dbdbdb;
-    #first {
+// // // // // FOoter
+#footer {
+  margin-top: 50px;
+  border-top: 1px solid #dbdbdb;
+  #first {
+    display: flex;
+    padding: 2% 10%;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+    .f-div {
       display: flex;
-      padding: 2% 10%;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #dbdbdb;
-      .f-div {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        h2 {
-          font-size: 14px;
-          color: #888;
-          font-weight: normal;
-        }
-        h1 {
-          font-size: 16px;
-          font-weight: 600;
-        }
-        h1:hover {
-          color: #549f58;
-          cursor: pointer;
-          transition: all ease-in-out 0.2s;
-        }
-      }
-    }
-    .socials {
-      display: flex;
+      flex-direction: column;
       gap: 15px;
-      i {
-        padding: 8px;
+      h2 {
+        font-size: 14px;
+        color: #888;
+        font-weight: normal;
       }
-      i:hover {
-        background-color: #549f58;
+      h1 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      h1:hover {
+        color: #549f58;
         cursor: pointer;
-        color: white;
-        border-radius: 5px;
         transition: all ease-in-out 0.2s;
       }
     }
-
-    #second {
-      display: flex;
-      justify-content: center;
-      h1 {
-        font-size: 14px;
-        font-weight: 500;
-      }
-      margin-top: 20px;
-      margin-bottom: 20px;
+  }
+  .socials {
+    display: flex;
+    gap: 15px;
+    i {
+      padding: 8px;
+    }
+    i:hover {
+      background-color: #549f58;
+      cursor: pointer;
+      color: white;
+      border-radius: 5px;
+      transition: all ease-in-out 0.2s;
     }
   }
+
+  #second {
+    display: flex;
+    justify-content: center;
+    h1 {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
