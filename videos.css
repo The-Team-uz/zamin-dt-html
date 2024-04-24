@@ -1,0 +1,187 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #fbfbfb;
+  font-size: 14px;
+}
+
+#main {
+  position: relative;
+}
+#main #first {
+  display: flex;
+  justify-content: space-between;
+  background-color: #282d30;
+  color: white;
+  padding: 16px 10%;
+  font-size: 12px;
+}
+#main #first h4 {
+  font-weight: normal;
+}
+#main #first select {
+  background: inherit;
+  color: white;
+  border: none;
+  display: flex;
+}
+#main #second {
+  display: flex;
+  padding: 16px 10%;
+  position: sticky;
+  align-items: center;
+  justify-content: space-between;
+}
+#main #second .links {
+  display: flex;
+  gap: 25px;
+}
+#main #second .links a {
+  text-decoration: none;
+}
+#main #second .links .thisa {
+  border-bottom: 1px solid #549f58;
+  padding-bottom: 5px;
+  font-weight: 600;
+  color: black;
+}
+#main #second .links .othera {
+  color: #898989;
+  font-weight: 600;
+}
+#main #second .links .othera:hover {
+  color: black;
+  transition: all ease-in-out 0.2s;
+  border-bottom: 1px solid #549f58;
+}
+#main #second .buttons {
+  display: flex;
+  gap: 10px;
+}
+#main #second .buttons .likeButton {
+  padding: 12px 14px;
+  background: white;
+  border: 1px solid #dfe2e9;
+  border-radius: 5px;
+}
+#main #second .buttons .basket {
+  padding: 12px 14px;
+  background: white;
+  border: 1px solid #dfe2e9;
+  color: #898989;
+  font-size: 16px;
+  border-radius: 5px;
+}
+#main #second .buttons .loginbtn {
+  padding: 12px 20px;
+  background: #549f58;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+#main #third {
+  padding: 16px 10%;
+  border-bottom: 1px solid #dfe2e9;
+}
+#main #third h1 {
+  display: flex;
+  gap: 5px;
+  font-size: 12px;
+}
+#main #third .home {
+  text-decoration: none;
+  color: #777;
+}
+#main #third .allproducts {
+  text-decoration: none;
+  color: black;
+}
+#main .logo {
+  width: 50px;
+}
+#main option {
+  background-color: white;
+  color: black;
+}
+@media screen and (max-width: 1024px) {
+  #main #first {
+    padding: 16px 20px;
+  }
+}
+
+.title {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding: 2% 10%;
+  text-align: center;
+}
+.title h1 {
+  font-size: 44px;
+}
+.title h2 {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #898989;
+  margin-bottom: 100px;
+}
+
+#footer {
+  margin-top: 50px;
+  border-top: 1px solid #dbdbdb;
+}
+#footer #first {
+  display: flex;
+  padding: 2% 10%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dbdbdb;
+}
+#footer #first .f-div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#footer #first .f-div h2 {
+  font-size: 14px;
+  color: #888;
+  font-weight: normal;
+}
+#footer #first .f-div h1 {
+  font-size: 16px;
+  font-weight: 600;
+}
+#footer #first .f-div h1:hover {
+  color: #549f58;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+#footer .socials {
+  display: flex;
+  gap: 15px;
+}
+#footer .socials i {
+  padding: 8px;
+}
+#footer .socials i:hover {
+  background-color: #549f58;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  transition: all ease-in-out 0.2s;
+}
+#footer #second {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#footer #second h1 {
+  font-size: 14px;
+  font-weight: 500;
+}/*# sourceMappingURL=videos.css.map */
