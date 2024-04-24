@@ -31,11 +31,17 @@ body {
   display: flex;
 }
 #main #second {
+  position: sticky;
+  top: 0; /* Adjust this value as needed */
   display: flex;
   padding: 16px 10%;
-  position: sticky;
+  background-color: white;
   align-items: center;
+  z-index: 100;
   justify-content: space-between;
+}
+#main #second .logo {
+  width: 50px;
 }
 #main #second .links {
   display: flex;
@@ -45,6 +51,7 @@ body {
   text-decoration: none;
 }
 #main #second .links .thisa {
+  color: black;
   border-bottom: 1px solid #549f58;
   padding-bottom: 5px;
   font-weight: 600;
@@ -113,6 +120,23 @@ body {
   #main #first {
     padding: 16px 20px;
   }
+}
+#main #third {
+  padding: 16px 10%;
+  border-bottom: 1px solid #dfe2e9;
+}
+#main #third h1 {
+  display: flex;
+  gap: 5px;
+  font-size: 12px;
+}
+#main #third .home {
+  text-decoration: none;
+  color: #777;
+}
+#main #third .allproducts {
+  text-decoration: none;
+  color: black;
 }
 
 .carusel {
@@ -217,6 +241,110 @@ body {
   font-size: 16px;
   color: #898989;
   margin-bottom: 100px;
+}
+.title h4 {
+  color: #898989;
+  margin-top: 18px;
+  font-size: 17px;
+}
+
+.about_wrapper {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.about_wrapper .requisites {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  border: 1px solid #dfe2e9;
+  padding: 30px;
+  border-radius: 1rem;
+}
+.about_wrapper .requisites .req_second {
+  height: 100px;
+  display: flex;
+  gap: 25px;
+}
+.about_wrapper .requisites .req_second .req_logo {
+  width: 150px;
+  border: 0.5px solid #dfe2e9;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about_wrapper .requisites .req_second .req_logo .logo {
+  width: 100px;
+}
+.about_wrapper .requisites .req_second .req_second_wrap {
+  display: flex;
+  gap: 200px;
+}
+.about_wrapper .requisites .req_second .req_second_wrap .req_second_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.about_wrapper .requisites .req_second .req_second_wrap .req_second_item .element {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.about_wrapper .requisites .req_second .req_second_wrap .req_second_item .element h4 {
+  font-weight: 100;
+  color: #898989;
+}
+.about_wrapper .requisites .req_third {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  color: #898989;
+  font-weight: 600;
+}
+.about_wrapper .about {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dfe2e9;
+  padding: 30px;
+  border-radius: 1rem;
+}
+.about_wrapper .about .second {
+  display: flex;
+  justify-content: space-between;
+}
+.about_wrapper .about .second .second_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.about_wrapper .about .second .second_item .element {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.about_wrapper .about .second .second_item .element h4 {
+  font-weight: 100;
+  color: #898989;
+}
+.about_wrapper .about .second .second_item .element .socials {
+  display: flex;
+  gap: 15px;
+}
+.about_wrapper .about .second .second_item .element .socials i {
+  padding: 8px;
+}
+.about_wrapper .about .second .second_item .element .socials i:hover {
+  background-color: #549f58;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  transition: all ease-in-out 0.2s;
+}
+.about_wrapper .about .second iframe:focus {
+  outline: none;
+  border: none;
 }
 
 #footer {
