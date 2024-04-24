@@ -5,6 +5,7 @@ $green_pale: #549f58c5;
 $gray: #898989;
 $white: #ffff;
 $header_background: #282d30;
+$route_gray: #48545d;
 
 * {
   box-sizing: border-box;
@@ -13,18 +14,61 @@ $header_background: #282d30;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 100;
   background-color: $background;
+  line-height: 1.4;
   font-size: 14px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
+}
+html {
+  scroll-behavior: smooth;
+}
+/// Scroll Up
+#back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: $green;
+  color: #fff;
+  border-radius: 100%;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+////  LOADINGGGGGGGGGGG
+.loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+  }
 }
 
 // HEADER
 #main {
-  position: relative;
   #first {
     display: flex;
     justify-content: space-between;
@@ -46,26 +90,27 @@ body {
 
   #second {
     position: sticky;
-    top: 0; /* Adjust this value as needed */
+    top: 0;
     display: flex;
     padding: 16px 10%;
     background-color: $white;
-    position: sticky;
     align-items: center;
-    z-index: 100;
     justify-content: space-between;
+    z-index: 1000;
     .logo {
       width: 50px;
     }
     .links {
       display: flex;
       gap: 25px;
+      font-size: 16px;
       a {
         text-decoration: none;
+        position: relative;
       }
       .thisa {
         color: black;
-        border-bottom: 1px solid $green;
+        border-bottom: 2px solid $green;
         padding-bottom: 5px;
         font-weight: 600;
         color: black;
@@ -74,10 +119,22 @@ body {
         color: $gray;
         font-weight: 600;
       }
+      .othera::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $green;
+        transition: width 0.3s ease;
+      }
+
+      .othera:hover::before {
+        width: 100%;
+      }
       .othera:hover {
         color: black;
-        transition: all ease-in-out 0.2s;
-        border-bottom: 1px solid $green;
       }
     }
     .buttons {
@@ -111,7 +168,8 @@ body {
 
   #third {
     padding: 16px 10%;
-    border-bottom: 1px solid $border_color;
+    border-bottom: 0.5px solid $border_color;
+    background-color: $white;
     h1 {
       display: flex;
       gap: 5px;
@@ -119,13 +177,16 @@ body {
     }
     .home {
       text-decoration: none;
-      color: $gray;
+      color: #bebfc9;
+    }
+    .home:hover {
+      color: $route_gray;
     }
     .allproducts {
       text-decoration: none;
+      color: $route_gray;
     }
   }
-
   .logo {
     width: 50px;
   }
@@ -136,24 +197,6 @@ body {
   @media screen and (max-width: 1024px) {
     #first {
       padding: 16px 20px;
-    }
-  }
-  #third {
-    padding: 16px 10%;
-    border-bottom: 1px solid $border_color;
-
-    h1 {
-      display: flex;
-      gap: 5px;
-      font-size: 12px;
-    }
-    .home {
-      text-decoration: none;
-      color: #777;
-    }
-    .allproducts {
-      text-decoration: none;
-      color: black;
     }
   }
 }
@@ -254,20 +297,12 @@ body {
 }
 
 .title {
-  margin-top: 50px;
-  margin-bottom: 30px;
-  padding: 2% 10%;
+  margin: 4%;
   text-align: center;
   h1 {
     font-size: 44px;
   }
   h4 {
-    color: $gray;
-    margin-top: 18px;
-    font-size: 17px;
-  }
-  h2 {
-    position: static;
     color: $gray;
     margin-top: 18px;
     font-size: 17px;
@@ -372,14 +407,27 @@ body {
         border: none;
       }
     }
-    h2 {
-      margin-top: 20px;
-      font-size: 16px;
-      color: $gray;
-      margin-bottom: 100px;
-    }
   }
 }
+
+///////////////////Single Productttttttttttttttttttttt ///////////////////////
+.single_product {
+  margin-top: -200px;
+   padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+  .product_wrapper {
+    padding: 30px;
+    border: 1px solid $border_color;
+    border-radius: 1rem;
+  }
+  .basket_wrapper {
+    padding: 10px;
+    border: 1px solid $border_color;
+    border-radius: 1rem;
+  }
+}
+
 // // // // // FOoter
 #footer {
   margin-top: 50px;
@@ -435,7 +483,6 @@ body {
       font-size: 14px;
       font-weight: 500;
     }
-   
   }
 }
 

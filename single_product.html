@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DT Market</title>
+    <link rel="stylesheet" href="home.css" />
+    <script src="script.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="home.css" />
-    <script src="script.js"></script>
-    <title>DT Market</title>
   </head>
   <body>
     <!-- HEADERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR -->
@@ -31,7 +31,7 @@
         <nav class="links">
           <a href="/home.html" class="othera">Home</a>
           <a href="/products.html" class="othera">All products</a>
-          <a href="/videos.html" class="thisa">Video reviews</a>
+          <a href="/videos.html" class="othera">Video reviews</a>
           <a href="/about.html" class="othera">About Us</a>
         </nav>
         <div class="buttons">
@@ -53,18 +53,15 @@
       <div id="third">
         <h1>
           <a href="/home.html" class="home">Home</a> |
-          <a href="/videos.html" class="allproducts">Video reviews</a>
+          <a href="/products.html" class="allproducts">About the product</a>
         </h1>
       </div>
     </div>
 
-    <!-- VIDEOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS -->
-    <div class="title">
-      <h1>Video reviews</h1>
-      <h4>Video reviews of the product</h4>
+    <div class="single_product">
+      <div class="product_wrapper">aa</div>
+      <div class="basket_wrapper">aaa</div>
     </div>
-
-    <!-- FOOOOOTERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR -->
     <div id="footer">
       <!-- First -->
       <div id="first">
@@ -109,10 +106,28 @@
       </div>
     </div>
     <a id="back-to-top" href="#top"><i class="fa-solid fa-chevron-up"></i></a>
-    <!-- LOADING -->
+    <!-- Loading -->
     <div class="loading" id="loading">
       <img src="public/loading.svg" alt="Loading..." />
     </div>
   </body>
 </html>
+<script>
+  // Get the URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
 
+  // Retrieve data from the URL parameters
+  const image = urlParams.get("image");
+  const price = urlParams.get("price");
+  const desc = urlParams.get("desc");
+  const images = image.split(",");
+
+  //   Use the retrieved data as needed
+  // document.write("<h2>Product Details</h2>");
+//   document.write(`<img src="${images[0]}"/>`);
+  // document.write(`<img src="${images[1]}"/>`);
+  // document.write(`<img src="${images[2]}"/>`);
+
+  // document.write("<p>Price: " + price + "</p>");
+  // document.write("<p>Description: " + desc + "</p>");
+</script>

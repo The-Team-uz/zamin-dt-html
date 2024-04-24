@@ -5,18 +5,59 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 100;
   background-color: #fbfbfb;
+  line-height: 1.4;
   font-size: 14px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-#main {
   position: relative;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #549f58;
+  color: #fff;
+  border-radius: 100%;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+}
+.loading img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+
 #main #first {
   display: flex;
   justify-content: space-between;
@@ -37,14 +78,13 @@ body {
 }
 #main #second {
   position: sticky;
-  top: 0; /* Adjust this value as needed */
+  top: 0;
   display: flex;
   padding: 16px 10%;
   background-color: white;
-  position: sticky;
   align-items: center;
-  z-index: 100;
   justify-content: space-between;
+  z-index: 1000;
 }
 #main #second .logo {
   width: 50px;
@@ -52,13 +92,15 @@ body {
 #main #second .links {
   display: flex;
   gap: 25px;
+  font-size: 16px;
 }
 #main #second .links a {
   text-decoration: none;
+  position: relative;
 }
 #main #second .links .thisa {
   color: black;
-  border-bottom: 1px solid #549f58;
+  border-bottom: 2px solid #549f58;
   padding-bottom: 5px;
   font-weight: 600;
   color: black;
@@ -67,10 +109,21 @@ body {
   color: #898989;
   font-weight: 600;
 }
+#main #second .links .othera::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #549f58;
+  transition: width 0.3s ease;
+}
+#main #second .links .othera:hover::before {
+  width: 100%;
+}
 #main #second .links .othera:hover {
   color: black;
-  transition: all ease-in-out 0.2s;
-  border-bottom: 1px solid #549f58;
 }
 #main #second .buttons {
   display: flex;
@@ -100,7 +153,8 @@ body {
 }
 #main #third {
   padding: 16px 10%;
-  border-bottom: 1px solid #dfe2e9;
+  border-bottom: 0.5px solid #dfe2e9;
+  background-color: white;
 }
 #main #third h1 {
   display: flex;
@@ -109,10 +163,14 @@ body {
 }
 #main #third .home {
   text-decoration: none;
-  color: #898989;
+  color: #bebfc9;
+}
+#main #third .home:hover {
+  color: #48545d;
 }
 #main #third .allproducts {
   text-decoration: none;
+  color: #48545d;
 }
 #main .logo {
   width: 50px;
@@ -125,23 +183,6 @@ body {
   #main #first {
     padding: 16px 20px;
   }
-}
-#main #third {
-  padding: 16px 10%;
-  border-bottom: 1px solid #dfe2e9;
-}
-#main #third h1 {
-  display: flex;
-  gap: 5px;
-  font-size: 12px;
-}
-#main #third .home {
-  text-decoration: none;
-  color: #777;
-}
-#main #third .allproducts {
-  text-decoration: none;
-  color: black;
 }
 
 .carusel {
@@ -233,21 +274,13 @@ body {
 }
 
 .title {
-  margin-top: 50px;
-  margin-bottom: 30px;
-  padding: 2% 10%;
+  margin: 4%;
   text-align: center;
 }
 .title h1 {
   font-size: 44px;
 }
 .title h4 {
-  color: #898989;
-  margin-top: 18px;
-  font-size: 17px;
-}
-.title h2 {
-  position: static;
   color: #898989;
   margin-top: 18px;
   font-size: 17px;
@@ -351,11 +384,22 @@ body {
   outline: none;
   border: none;
 }
-.about_wrapper .about h2 {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #898989;
-  margin-bottom: 100px;
+
+.single_product {
+  margin-top: -200px;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.single_product .product_wrapper {
+  padding: 30px;
+  border: 1px solid #dfe2e9;
+  border-radius: 1rem;
+}
+.single_product .basket_wrapper {
+  padding: 10px;
+  border: 1px solid #dfe2e9;
+  border-radius: 1rem;
 }
 
 #footer {

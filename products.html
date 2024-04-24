@@ -7,6 +7,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <script src="script.js"></script>
+
     <link rel="stylesheet" href="home.css" />
     <title>DT Market</title>
   </head>
@@ -61,7 +63,6 @@
     <div class="title">
       <h1>All Products</h1>
     </div>
-
     <div class="wrapper">
       <div class="card">
         <img
@@ -122,6 +123,11 @@
         <h1>© 2023-2024 — OOO «MA'MUR FAZO NUR MCHJ». All rights reserved.</h1>
       </div>
     </div>
+    <a id="back-to-top" href="#top"><i class="fa-solid fa-chevron-up"></i></a>
+    <!-- LOADING -->
+    <div class="loading" id="loading">
+      <img src="public/loading.svg" alt="Loading..." />
+    </div>
   </body>
 </html>
 
@@ -129,26 +135,32 @@
   const wrapper = document.querySelector(".wrapper");
   const products = [
     {
-      image:
+      image: [
         "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6",
+      ],
       price: 7100000,
       desc: "Стиральная машина Samsung WW70AGAS22AELD",
     },
     {
-      image:
+      image: [
         "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1PJSHEimeve8vtIC_hVoIiHEYyjJ3FC6WoPwKtFSbfaNlwwmTxlI1sS_WXWT-eduj",
+        "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1PJSHEimeve8vtIC_hVoIiGUWP4KUTaLSTCYaImz7dyByLF4CR6rfcSVgxVzI6or_",
+        "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1PJSHEimeve8vtIC_hVoIiDWBWBu_MBnLGXzexMyKxctpZP6swgu_ksTIVmys0lpO",
+      ],
       price: 8000000,
       desc: "Игровая приставка Sony PlayStation 5 Slim, с дисководом, 1 ТБ, два геймпада",
     },
     {
-      image:
+      image: [
         "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6",
+      ],
       price: 7100000,
       desc: "Стиральная машина Samsung WW70AGAS22AELD",
     },
     {
-      image:
+      image: [
         "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6",
+      ],
       price: 7100000,
       desc: "Стиральная машина Samsung WW70AGAS22AELD",
     },
@@ -159,7 +171,7 @@
 
     const cardImage = document.createElement("img");
     cardImage.classList.add("card_image");
-    cardImage.src = element.image;
+    cardImage.src = element.image[0];
 
     const cardPrice = document.createElement("p");
     let formatPrice = element.price.toLocaleString();
@@ -173,12 +185,30 @@
     const cardFooter = document.createElement("div");
     cardFooter.classList.add("card_footer");
 
+    const form = document.createElement("form");
+    form.action = "single_product.html";
+
+    const inputImage = document.createElement("input");
+    inputImage.type = "hidden";
+    inputImage.name = "image";
+    inputImage.value = element.image;
+
+    const inputPrice = document.createElement("input");
+    inputPrice.type = "hidden";
+    inputPrice.name = "price";
+    inputPrice.value = element.price;
+
+    const inputDesc = document.createElement("input");
+    inputDesc.type = "hidden";
+    inputDesc.name = "desc";
+    inputDesc.value = element.desc;
+
     const buttonBuy = document.createElement("button");
     buttonBuy.classList.add("card_button");
     buttonBuy.textContent = "Add to basket";
-    buttonBuy.addEventListener("click", () => {
-      alert(`Вы хотели бы купить ${element.desc} за ${formatPrice}`);
-    });
+
+    form.append(inputImage, inputPrice, inputDesc, buttonBuy);
+    cardFooter.appendChild(form);
 
     const heart = document.createElement("i");
     heart.classList.add("fa-regular");
@@ -189,5 +219,13 @@
     productElement.append(cardImage, cardDesc, cardPrice, cardFooter);
 
     wrapper.appendChild(productElement);
+  });
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const form = card.querySelector("form");
+      form.submit();
+    });
   });
 </script>
