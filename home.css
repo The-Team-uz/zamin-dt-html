@@ -8,6 +8,10 @@ body {
   font-family: sans-serif;
   background-color: #fbfbfb;
   font-size: 14px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #main {
@@ -29,12 +33,15 @@ body {
   color: white;
   border: none;
   display: flex;
+  outline: none;
 }
 #main #second {
   position: sticky;
   top: 0; /* Adjust this value as needed */
   display: flex;
   padding: 16px 10%;
+  background-color: white;
+  position: sticky;
   align-items: center;
   z-index: 100;
   justify-content: space-between;
@@ -102,11 +109,13 @@ body {
 }
 #main #third .home {
   text-decoration: none;
-  color: #777;
+  color: #898989;
 }
 #main #third .allproducts {
   text-decoration: none;
-  color: black;
+}
+#main .logo {
+  width: 50px;
 }
 #main option {
   background-color: white;
@@ -232,17 +241,133 @@ body {
 .title h1 {
   font-size: 44px;
 }
+.title h4 {
+  color: #898989;
+  margin-top: 18px;
+  font-size: 17px;
+}
+.title h2 {
+  position: static;
+  color: #898989;
+  margin-top: 18px;
+  font-size: 17px;
+}
+
+.about_wrapper {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.about_wrapper .requisites {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  border: 1px solid #dfe2e9;
+  padding: 30px;
+  border-radius: 1rem;
+}
+.about_wrapper .requisites .req_second {
+  height: 100px;
+  display: flex;
+  gap: 25px;
+}
+.about_wrapper .requisites .req_second .req_logo {
+  width: 150px;
+  border: 0.5px solid #dfe2e9;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about_wrapper .requisites .req_second .req_logo .logo {
+  width: 100px;
+}
+.about_wrapper .requisites .req_second .req_second_wrap {
+  display: flex;
+  gap: 200px;
+}
+.about_wrapper .requisites .req_second .req_second_wrap .req_second_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.about_wrapper .requisites .req_second .req_second_wrap .req_second_item .element {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.about_wrapper .requisites .req_second .req_second_wrap .req_second_item .element h4 {
+  font-weight: 100;
+  color: #898989;
+}
+.about_wrapper .requisites .req_third {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  color: #898989;
+  font-weight: 600;
+}
+.about_wrapper .about {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #dfe2e9;
+  padding: 30px;
+  border-radius: 1rem;
+}
+.about_wrapper .about .second {
+  display: flex;
+  justify-content: space-between;
+}
+.about_wrapper .about .second .second_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.about_wrapper .about .second .second_item .element {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.about_wrapper .about .second .second_item .element h4 {
+  font-weight: 100;
+  color: #898989;
+}
+.about_wrapper .about .second .second_item .element .socials {
+  display: flex;
+  gap: 15px;
+}
+.about_wrapper .about .second .second_item .element .socials i {
+  padding: 8px;
+}
+.about_wrapper .about .second .second_item .element .socials i:hover {
+  background-color: #549f58;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  transition: all ease-in-out 0.2s;
+}
+.about_wrapper .about .second iframe:focus {
+  outline: none;
+  border: none;
+}
+.about_wrapper .about h2 {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #898989;
+  margin-bottom: 100px;
+}
 
 #footer {
   margin-top: 50px;
-  border-top: 1px solid #dbdbdb;
+  border-top: 1px solid #dfe2e9;
 }
 #footer #first {
   display: flex;
   padding: 2% 10%;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dfe2e9;
 }
 #footer #first .f-div {
   display: flex;
@@ -251,7 +376,7 @@ body {
 }
 #footer #first .f-div h2 {
   font-size: 14px;
-  color: #888;
+  color: #898989;
   font-weight: normal;
 }
 #footer #first .f-div h1 {
@@ -279,11 +404,21 @@ body {
 }
 #footer #second {
   display: flex;
+  height: 60px;
+  align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 #footer #second h1 {
   font-size: 14px;
   font-weight: 500;
+}
+
+::-moz-selection {
+  background-color: rgba(84, 159, 88, 0.7725490196); /* Orange background color */
+  color: white; /* White text color */
+}
+
+::selection {
+  background-color: rgba(84, 159, 88, 0.7725490196); /* Orange background color */
+  color: white; /* White text color */
 }/*# sourceMappingURL=home.css.map */
