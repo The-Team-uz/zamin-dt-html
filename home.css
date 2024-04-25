@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
@@ -5,7 +6,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #fbfbfb;
   font-size: 14px;
   height: 100vh;
@@ -96,6 +97,35 @@ body {
   font-size: 16px;
   border-radius: 5px;
 }
+#main #second .buttons .fa-circle-user {
+  background-color: #549f58;
+  color: white;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+#main #second .buttons .fa-bars {
+  font-size: 20px;
+  display: none;
+}
+#main .hiding_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+  position: fixed;
+}
+#main .hiding_menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
 #main #third {
   padding: 16px 10%;
   border-bottom: 1px solid #dfe2e9;
@@ -118,28 +148,6 @@ body {
 }
 #main option {
   background-color: white;
-  color: black;
-}
-@media screen and (max-width: 1024px) {
-  #main #first {
-    padding: 16px 20px;
-  }
-}
-#main #third {
-  padding: 16px 10%;
-  border-bottom: 1px solid #dfe2e9;
-}
-#main #third h1 {
-  display: flex;
-  gap: 5px;
-  font-size: 12px;
-}
-#main #third .home {
-  text-decoration: none;
-  color: #777;
-}
-#main #third .allproducts {
-  text-decoration: none;
   color: black;
 }
 
@@ -398,4 +406,34 @@ body {
 #footer #second h1 {
   font-size: 14px;
   font-weight: 500;
+}
+
+@media screen and (max-width: 1024px) {
+  #main .first {
+    padding: 16px 20px;
+  }
+  #main .second {
+    padding: 20px;
+  }
+  #main .second .links {
+    display: none;
+  }
+  #main .second .buttons {
+    display: flex;
+    align-items: center;
+  }
+  #main .second .buttons .loginbtn {
+    display: none;
+  }
+  #main .second .buttons .fa-circle-user {
+    display: block;
+  }
+  #main .second .buttons .fa-bars {
+    display: block;
+  }
+  #main .second .buttons .fa-bars:hover {
+    color: #898989;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+  }
 }/*# sourceMappingURL=home.css.map */
