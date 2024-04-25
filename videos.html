@@ -8,6 +8,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <link rel="stylesheet" href="home.css" />
+    <script src="script.js"></script>
     <title>DT Market</title>
   </head>
   <body>
@@ -107,72 +108,11 @@
         <h1>© 2023-2024 — OOO «MA'MUR FAZO NUR MCHJ». All rights reserved.</h1>
       </div>
     </div>
+    <a id="back-to-top" href="#top"><i class="fa-solid fa-chevron-up"></i></a>
+    <!-- LOADING -->
+    <div class="loading" id="loading">
+      <img src="public/loading.svg" alt="Loading..." />
+    </div>
   </body>
 </html>
 
-<script type="module">
-  const wrapper = document.querySelector(".wrapper");
-  const products = [
-    {
-      image:
-        "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6",
-      price: 7100000,
-      desc: "Стиральная машина Samsung WW70AGAS22AELD",
-    },
-    {
-      image:
-        "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1PJSHEimeve8vtIC_hVoIiHEYyjJ3FC6WoPwKtFSbfaNlwwmTxlI1sS_WXWT-eduj",
-      price: 8000000,
-      desc: "Игровая приставка Sony PlayStation 5 Slim, с дисководом, 1 ТБ, два геймпада",
-    },
-    {
-      image:
-        "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6",
-      price: 7100000,
-      desc: "Стиральная машина Samsung WW70AGAS22AELD",
-    },
-    {
-      image:
-        "https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6",
-      price: 7100000,
-      desc: "Стиральная машина Samsung WW70AGAS22AELD",
-    },
-  ];
-  products.forEach((element) => {
-    const productElement = document.createElement("div");
-    productElement.classList.add("card");
-
-    const cardImage = document.createElement("img");
-    cardImage.classList.add("card_image");
-    cardImage.src = element.image;
-
-    const cardPrice = document.createElement("p");
-    let formatPrice = element.price.toLocaleString();
-    cardPrice.classList.add("card_price");
-    cardPrice.textContent = `${formatPrice} som/sht`;
-
-    const cardDesc = document.createElement("p");
-    cardDesc.classList.add("card_description");
-    cardDesc.textContent = element.desc;
-
-    const cardFooter = document.createElement("div");
-    cardFooter.classList.add("card_footer");
-
-    const buttonBuy = document.createElement("button");
-    buttonBuy.classList.add("card_button");
-    buttonBuy.textContent = "Add to basket";
-    buttonBuy.addEventListener("click", () => {
-      alert(`Вы хотели бы купить ${element.desc} за ${formatPrice}`);
-    });
-
-    const heart = document.createElement("i");
-    heart.classList.add("fa-regular");
-    heart.classList.add("fa-heart");
-
-    cardFooter.append(buttonBuy, heart);
-
-    productElement.append(cardImage, cardDesc, cardPrice, cardFooter);
-
-    wrapper.appendChild(productElement);
-  });
-</script>

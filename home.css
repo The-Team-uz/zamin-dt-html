@@ -7,7 +7,9 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  font-weight: 100;
   background-color: #fbfbfb;
+  line-height: 1.4;
   font-size: 14px;
   height: 100vh;
   display: flex;
@@ -15,9 +17,60 @@ body {
   justify-content: space-between;
 }
 
-#main {
-  position: relative;
+html {
+  scroll-behavior: smooth;
 }
+
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #dfe2e9;
+}
+
+.fixedMenu {
+  position: fixed;
+  top: 80px;
+  width: 100%;
+}
+
+#back-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #549f58;
+  color: #fff;
+  border-radius: 100%;
+  text-decoration: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9999;
+}
+.loading img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+
 #main #first {
   display: flex;
   justify-content: space-between;
@@ -34,16 +87,15 @@ body {
   color: white;
   border: none;
   display: flex;
+  outline: none;
 }
 #main #second {
-  position: sticky;
-  top: 0; /* Adjust this value as needed */
   display: flex;
   padding: 16px 10%;
   background-color: white;
   align-items: center;
-  z-index: 100;
   justify-content: space-between;
+  z-index: 1000;
 }
 #main #second .logo {
   width: 50px;
@@ -51,25 +103,37 @@ body {
 #main #second .links {
   display: flex;
   gap: 25px;
+  font-size: 16px;
 }
 #main #second .links a {
   text-decoration: none;
+  position: relative;
 }
 #main #second .links .thisa {
   color: black;
-  border-bottom: 1px solid #549f58;
+  border-bottom: 2px solid #549f58;
   padding-bottom: 5px;
-  font-weight: 600;
-  color: black;
+  font-weight: 500;
 }
 #main #second .links .othera {
   color: #898989;
-  font-weight: 600;
+  font-weight: 500;
+}
+#main #second .links .othera::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #549f58;
+  transition: width 0.3s ease;
+}
+#main #second .links .othera:hover::before {
+  width: 100%;
 }
 #main #second .links .othera:hover {
   color: black;
-  transition: all ease-in-out 0.2s;
-  border-bottom: 1px solid #549f58;
 }
 #main #second .buttons {
   display: flex;
@@ -105,30 +169,77 @@ body {
   border-radius: 5px;
   display: none;
 }
-#main #second .buttons .fa-bars {
-  font-size: 20px;
+#main #second .buttons .fa- bars {
   display: none;
 }
+#main #second .buttons .ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#main #second .buttons .hamRotate.active {
+  transform: rotate(45deg);
+}
+#main #second .buttons .hamRotate180.active {
+  transform: rotate(180deg);
+}
+#main #second .buttons .line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #000;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+#main #second .buttons .ham1 .top {
+  stroke-dasharray: 40 139;
+}
+#main #second .buttons .ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+#main #second .buttons .ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+#main #second .buttons .ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
 #main .hiding_menu {
-  display: flex;
+  padding-top: 20px;
   flex-direction: column;
   justify-content: start;
   align-items: center;
   gap: 25px;
   width: 100%;
   height: 100vh;
-  background-color: white;
-  z-index: 100;
-  position: fixed;
+  background-color: #fbfbfb;
+  z-index: 3;
 }
 #main .hiding_menu a {
   text-decoration: none;
   color: black;
   font-size: 16px;
 }
+#main .hiding_menu .thisa {
+  color: black;
+  border-bottom: 2px solid #549f58;
+  padding-bottom: 5px;
+  font-weight: 500;
+}
+#main .hiding_menu .othera {
+  color: #898989;
+  font-weight: 500;
+}
+#main .hiding_menu .othera:hover {
+  border-bottom: 1px solid #549f58;
+  color: black;
+  transition: all ease-in-out 0.3s;
+}
 #main #third {
   padding: 16px 10%;
-  border-bottom: 1px solid #dfe2e9;
+  border-bottom: 0.5px solid #dfe2e9;
+  background-color: white;
 }
 #main #third h1 {
   display: flex;
@@ -137,11 +248,14 @@ body {
 }
 #main #third .home {
   text-decoration: none;
-  color: #777;
+  color: #bebfc9;
+}
+#main #third .home:hover {
+  color: #48545d;
 }
 #main #third .allproducts {
   text-decoration: none;
-  color: black;
+  color: #48545d;
 }
 #main .logo {
   width: 50px;
@@ -173,6 +287,7 @@ body {
   width: 100%;
   height: 100%;
   background-size: cover;
+  background-position: center;
 }
 
 .wrapper {
@@ -182,7 +297,7 @@ body {
   gap: 15px;
 }
 .wrapper .card {
-  width: 280px;
+  width: 22%;
   height: 440px;
   margin: 1% 0%;
   background-color: white;
@@ -236,13 +351,12 @@ body {
   width: 100%;
   height: 48px;
   overflow: hidden;
+  font-weight: 400;
   text-overflow: ellipsis;
 }
 
 .title {
-  margin-top: 50px;
-  margin-bottom: 30px;
-  padding: 2% 10%;
+  margin: 4%;
   text-align: center;
 }
 .title h1 {
@@ -353,16 +467,32 @@ body {
   border: none;
 }
 
+.single_product {
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.single_product .product_wrapper {
+  padding: 30px;
+  border: 1px solid #dfe2e9;
+  border-radius: 1rem;
+}
+.single_product .basket_wrapper {
+  padding: 10px;
+  border: 1px solid #dfe2e9;
+  border-radius: 1rem;
+}
+
 #footer {
   margin-top: 50px;
-  border-top: 1px solid #dbdbdb;
+  border-top: 1px solid #dfe2e9;
 }
 #footer #first {
   display: flex;
   padding: 2% 10%;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dfe2e9;
 }
 #footer #first .f-div {
   display: flex;
@@ -371,7 +501,7 @@ body {
 }
 #footer #first .f-div h2 {
   font-size: 14px;
-  color: #888;
+  color: #898989;
   font-weight: normal;
 }
 #footer #first .f-div h1 {
@@ -399,41 +529,190 @@ body {
 }
 #footer #second {
   display: flex;
+  height: 60px;
+  align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 #footer #second h1 {
   font-size: 14px;
   font-weight: 500;
 }
 
+.bottom_menu {
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  position: fixed;
+  bottom: 0;
+  color: #fff;
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  z-index: 1000;
+  background-color: white;
+  padding: 30px;
+  border-top: 1px solid #dfe2e9;
+}
+.bottom_menu .thisa {
+  color: rgba(84, 159, 88, 0.7725490196);
+}
+.bottom_menu a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    justify-content: center;
+  }
+  .wrapper .card {
+    width: 25%;
+  }
+}
 @media screen and (max-width: 1024px) {
-  #main .first {
+  #main #first {
     padding: 16px 20px;
   }
-  #main .second {
+  #main #second {
     padding: 20px;
   }
-  #main .second .links {
+  #main #second .links {
     display: none;
   }
-  #main .second .buttons {
+  #main #second .buttons {
     display: flex;
     align-items: center;
   }
-  #main .second .buttons .loginbtn {
+  #main #second .buttons .loginbtn {
     display: none;
   }
-  #main .second .buttons .fa-circle-user {
+  #main #second .buttons .fa-circle-user {
     display: block;
   }
-  #main .second .buttons .fa-bars {
+  #main #second .buttons .fa-bars {
     display: block;
   }
-  #main .second .buttons .fa-bars:hover {
+  #main #second .buttons .fa-bars:hover {
     color: #898989;
     cursor: pointer;
     transition: all ease-in-out 0.2s;
+  }
+  #footer {
+    padding-top: 30px;
+  }
+  #footer #first {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .carusel {
+    padding: 20px;
+  }
+  .carusel .swiper {
+    height: 500px;
+  }
+  .wrapper {
+    padding: 20px 0;
+  }
+  .wrapper .card {
+    width: 48%;
+    justify-content: center;
+  }
+  .wrapper .card_image {
+    width: 264px;
+    height: 282px;
+  }
+}
+@media screen and (max-width: 640px) {
+  #back-to-top {
+    bottom: 70px;
+  }
+  #main #second {
+    padding: 5px 20px;
+  }
+  #main #second .logo {
+    width: 40px;
+  }
+  #main #second .buttons .likeButton {
+    padding: 6px;
+  }
+  #main #second .buttons .basket {
+    padding: 6px;
+  }
+  #main #second .buttons .basket span {
+    display: none;
+  }
+  #main #second .buttons .fa-circle-user {
+    padding: 6px;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  .carusel {
+    padding: 20px;
+  }
+  .carusel .swiper {
+    height: 400px;
+  }
+  .wrapper {
+    padding: 20px 0;
+  }
+  .wrapper .card {
+    width: 92%;
+    align-items: center;
+  }
+  .wrapper .card_image {
+    width: 264px;
+    height: 282px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .bottom_menu {
+    display: flex;
+  }
+  .fixedMenu {
+    top: 50px;
+  }
+  .likeButton {
+    display: none;
+  }
+  .basket {
+    display: none;
+  }
+  .mini {
+    display: none;
+  }
+  #footer {
+    padding-bottom: 50px;
+  }
+  #footer #first {
+    flex-direction: column;
+    gap: 8px;
+    align-items: start;
+  }
+  #footer #first .f-div h2,
+  #footer #first .f-div h1 {
+    font-size: 12px;
+  }
+  #footer #second {
+    padding: 20px;
+    text-align: center;
+  }
+  #footer #second h1 {
+    font-size: 12px;
+  }
+  .carusel {
+    padding: 20px;
+  }
+  .carusel .swiper {
+    height: 200px;
+  }
+  .carusel .swiper .swiper-pagination-bullet {
+    width: 30px;
+    height: 3px;
+    border-radius: 10px;
   }
 }/*# sourceMappingURL=home.css.map */
