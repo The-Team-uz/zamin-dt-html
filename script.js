@@ -58,6 +58,38 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  var regular_hearts = document.querySelectorAll(".heart");
+  var solid_hearts = document.querySelectorAll(".fill-heart");
+
+  regular_hearts.forEach((regular_heart, index) => {
+    regular_heart.addEventListener("click", () => {
+      solid_hearts[index].style.display = "block";
+      regular_heart.style.display = "none";
+    });
+  });
+
+  solid_hearts.forEach((solid_heart, index) => {
+    solid_heart.addEventListener("click", () => {
+      solid_heart.style.display = "none";
+      regular_hearts[index].style.display = "block";
+    });
+  });
+});
+
+// function changeLike(isLiked) {
+//   var regular_heart = document.querySelector(".heart");
+//   var solid_heart = document.querySelector(".fill-heart");
+//   if (!isLiked) {
+//     solid_heart.style.display = "block";
+//     regular_heart.style.display = "none";
+//     isLiked = true;
+//   } else {
+//     solid_heart.style.display = "none";
+//     regular_heart.style.display = "block";
+//     isLiked = false;
+//   }
+// }
 window.addEventListener("scroll", function () {
   var scrollPosition = window.scrollY;
   var fixedDiv = document.getElementById("second");
@@ -71,7 +103,7 @@ window.addEventListener("scroll", function () {
       content.style.marginTop = 20 + fixedDiv.offsetHeight + "px";
     } else {
       fixedDiv.classList.remove("fixed");
-      if (scrollPosition > fixedDiv.offsetHeight) {
+      if (scrollPosition > fixedDiv.offsetHeight+20) {
         fixedDiv.classList.remove("sticky");
         fixedDiv.classList.add("fixed");
         content.style.marginTop = 20 + fixedDiv.offsetHeight + "px";

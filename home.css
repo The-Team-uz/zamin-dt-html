@@ -153,6 +153,7 @@ html {
   background: white;
   border: 1px solid #dfe2e9;
   border-radius: 5px;
+  cursor: pointer;
 }
 #main #second .buttons .basket {
   padding: 12px 14px;
@@ -379,6 +380,13 @@ html {
   transition: all ease-in-out 0.3s;
   border-radius: 0.3rem;
 }
+.wrapper .fill-heart:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #f8d24a;
+  transition: all ease-in-out 0.3s;
+  border-radius: 0.3rem;
+}
 .wrapper .card_price {
   color: #8390a2;
   font-weight: 700;
@@ -408,9 +416,31 @@ html {
 }
 .title h4 {
   color: #8390a2;
-  margin-top: 18px;
+  margin-top: 0px;
   font-size: 17px;
   font-weight: 500;
+}
+.title .big-heart {
+  font-size: 100px;
+  color: #dfe2e9;
+  margin-bottom: 20px;
+}
+.title .home_btn {
+  margin-top: 45px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f8d24a;
+  font-weight: 600;
+}
+.title .home_btn:hover {
+  background-color: #fadb6e;
+}
+.title .wrapper .card .card_footer .fa-heart:hover {
+  color: white;
+}
+.title .wrapper .hidden {
+  display: none;
 }
 
 .about_wrapper {

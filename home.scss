@@ -161,6 +161,7 @@ html {
         background: $white;
         border: 1px solid $border_color;
         border-radius: 5px;
+        cursor: pointer;
       }
       .basket {
         padding: 12px 14px;
@@ -394,6 +395,13 @@ html {
     transition: all ease-in-out 0.3s;
     border-radius: 0.3rem;
   }
+  .fill-heart:hover {
+    cursor: pointer;
+    color: white;
+    background-color: $green;
+    transition: all ease-in-out 0.3s;
+    border-radius: 0.3rem;
+  }
   .card_price {
     color: $gray;
     font-weight: 700;
@@ -423,9 +431,37 @@ html {
   }
   h4 {
     color: $gray;
-    margin-top: 18px;
+    margin-top: 0px;
     font-size: 17px;
     font-weight: 500;
+  }
+  .big-heart {
+    font-size: 100px;
+    color: $border_color;
+    margin-bottom: 20px;
+  }
+  .home_btn {
+    margin-top: 45px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: $green;
+    font-weight: 600;
+  }
+  .home_btn:hover {
+    background-color: $green_pale;
+  }
+  .wrapper {
+    .card {
+      .card_footer {
+        .fa-heart:hover {
+          color: white;
+        }
+      }
+    }
+    .hidden {
+      display: none;
+    }
   }
 }
 
