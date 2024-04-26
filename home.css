@@ -5,6 +5,16 @@
   margin: 0;
 }
 
+::-moz-selection {
+  background-color: #fadb6e;
+  color: #fff;
+}
+
+::selection {
+  background-color: #fadb6e;
+  color: #fff;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -41,8 +51,8 @@ html {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #549f58;
-  color: #fff;
+  background-color: #f8d24a;
+  color: #000;
   border-radius: 100%;
   text-decoration: none;
   width: 50px;
@@ -111,7 +121,7 @@ html {
 }
 #main #second .links .thisa {
   color: black;
-  border-bottom: 2px solid #549f58;
+  border-bottom: 2px solid #f8d24a;
   padding-bottom: 5px;
   font-weight: 500;
 }
@@ -126,7 +136,7 @@ html {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #549f58;
+  background-color: #f8d24a;
   transition: width 0.3s ease;
 }
 #main #second .links .othera:hover::before {
@@ -155,21 +165,26 @@ html {
 }
 #main #second .buttons .loginbtn {
   padding: 12px 20px;
-  background: #549f58;
+  background: #f8d24a;
   border: none;
-  color: white;
+  color: #000;
   font-size: 16px;
   border-radius: 5px;
 }
+#main #second .buttons .loginbtn:hover {
+  background-color: #fadb6e;
+  transition: all ease-in-out 0.2s;
+  cursor: pointer;
+}
 #main #second .buttons .fa-circle-user {
-  background-color: #549f58;
-  color: white;
+  background-color: #f8d24a;
+  color: #000;
   font-size: 25px;
   padding: 10px;
   border-radius: 5px;
   display: none;
 }
-#main #second .buttons .fa- bars {
+#main #second .buttons .fa-bars {
   display: none;
 }
 #main #second .buttons .ham {
@@ -223,7 +238,7 @@ html {
 }
 #main .hiding_menu .thisa {
   color: black;
-  border-bottom: 2px solid #549f58;
+  border-bottom: 2px solid #f8d24a;
   padding-bottom: 5px;
   font-weight: 500;
 }
@@ -232,7 +247,7 @@ html {
   font-weight: 500;
 }
 #main .hiding_menu .othera:hover {
-  border-bottom: 1px solid #549f58;
+  border-bottom: 1px solid #f8d24a;
   color: black;
   transition: all ease-in-out 0.3s;
 }
@@ -278,7 +293,7 @@ html {
   border-radius: 10px;
 }
 .carusel .swiper .swiper-pagination-bullet-active {
-  background-color: #549f58;
+  background-color: #f8d24a;
 }
 .carusel .swiper .swiper-wrapper {
   display: flex;
@@ -318,12 +333,12 @@ html {
   height: 65%;
 }
 .wrapper .card_button {
-  background-color: #549f58;
+  background-color: #f8d24a;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 500;
-  color: white;
+  color: #000;
   border: none;
   width: 80%;
   height: 36px;
@@ -331,7 +346,7 @@ html {
   border-radius: 5px;
 }
 .wrapper .card_button:hover {
-  background-color: rgba(84, 159, 88, 0.7725490196);
+  background-color: #fadb6e;
 }
 .wrapper .card_footer {
   width: 100%;
@@ -341,7 +356,15 @@ html {
 }
 .wrapper .fa-heart {
   font-size: 24px;
-  color: #549f58;
+  color: #f8d24a;
+  padding: 5px;
+}
+.wrapper .fa-heart:hover {
+  cursor: pointer;
+  color: black;
+  background-color: #f8d24a;
+  transition: all ease-in-out 0.3s;
+  border-radius: 0.3rem;
 }
 .wrapper .card_price {
   color: #898989;
@@ -361,6 +384,7 @@ html {
 }
 .title h1 {
   font-size: 44px;
+  color: #48545d;
 }
 .title h4 {
   color: #898989;
@@ -400,6 +424,7 @@ html {
 }
 .about_wrapper .requisites .req_second .req_second_wrap {
   display: flex;
+  flex-wrap: wrap;
   gap: 200px;
 }
 .about_wrapper .requisites .req_second .req_second_wrap .req_second_item {
@@ -433,6 +458,7 @@ html {
 .about_wrapper .about .second {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 .about_wrapper .about .second .second_item {
   display: flex;
@@ -456,7 +482,7 @@ html {
   padding: 8px;
 }
 .about_wrapper .about .second .second_item .element .socials i:hover {
-  background-color: #549f58;
+  background-color: #f8d24a;
   cursor: pointer;
   color: white;
   border-radius: 5px;
@@ -509,7 +535,7 @@ html {
   font-weight: 600;
 }
 #footer #first .f-div h1:hover {
-  color: #549f58;
+  color: #f8d24a;
   cursor: pointer;
   transition: all ease-in-out 0.2s;
 }
@@ -521,7 +547,7 @@ html {
   padding: 8px;
 }
 #footer .socials i:hover {
-  background-color: #549f58;
+  background-color: #f8d24a;
   cursor: pointer;
   color: white;
   border-radius: 5px;
@@ -548,22 +574,26 @@ html {
   color: #fff;
   width: 100%;
   height: 50px;
-  font-size: 18px;
   z-index: 1000;
   background-color: white;
   padding: 30px;
   border-top: 1px solid #dfe2e9;
+  font-weight: 400;
 }
 .bottom_menu .thisa {
-  color: rgba(84, 159, 88, 0.7725490196);
+  font-size: 22px;
+  color: #fadb6e;
+}
+.bottom_menu .othera {
+  font-size: 18px;
 }
 .bottom_menu a {
   text-decoration: none;
-  color: black;
+  color: #898989;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -595,7 +625,7 @@ html {
     display: block;
   }
   #main #second .buttons .fa-bars {
-    display: block;
+    display: flex;
   }
   #main #second .buttons .fa-bars:hover {
     color: #898989;
@@ -620,11 +650,28 @@ html {
   }
   .wrapper .card {
     width: 48%;
-    justify-content: center;
+    align-items: center;
   }
   .wrapper .card_image {
     width: 264px;
     height: 282px;
+  }
+  .about_wrapper .requisites .req_second .req_second_wrap {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 917px) {
+  .req_third {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .second {
+    flex-direction: column;
+  }
+  .second iframe {
+    width: 100%;
+    height: 300px;
   }
 }
 @media screen and (max-width: 640px) {
@@ -667,6 +714,12 @@ html {
   .wrapper .card_image {
     width: 264px;
     height: 282px;
+  }
+  .req_second {
+    flex-direction: column;
+  }
+  .req_third {
+    margin-top: 180px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -714,5 +767,16 @@ html {
     width: 30px;
     height: 3px;
     border-radius: 10px;
+  }
+  .title h1 {
+    font-size: 26px;
+  }
+  .title h4 {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .req_third {
+    margin-top: 300px;
   }
 }/*# sourceMappingURL=home.css.map */

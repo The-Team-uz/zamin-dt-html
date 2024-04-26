@@ -47,8 +47,45 @@
             >Basket
           </button>
           <button type="button" class="loginbtn">Login</button>
+          <i class="fa-regular fa-circle-user"></i>
+          <svg
+            id="bar"
+            class="ham hamRotate ham1 fa-bars"
+            viewBox="0 0 100 100"
+            width="40"
+            onclick="this.classList.toggle('active')"
+          >
+            <path
+              class="line top"
+              d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
+            />
+            <path class="line middle" d="m 30,50 h 40" />
+            <path
+              class="line bottom"
+              d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
+            />
+          </svg>
         </div>
       </div>
+
+      <!-- Hiding menu -->
+      <div class="hiding_menu" style="display: none" id="hide">
+        <a href="/home.html" class="thisa mini">Home</a>
+        <a href="/products.html" class="othera mini">All products</a>
+        <a href="/videos.html" class="othera">Video reviews</a>
+        <a href="/about.html" class="othera">About Us</a>
+      </div>
+
+      <!-- Hiding bottom menu -->
+      <div class="bottom_menu">
+        <a href="/home.html"><i class="fa-solid fa-house othera"></i>Home</a>
+        <a href="/products.html"
+          ><i class="fa-solid fa-box othera"></i>Products</a
+        >
+        <a href="#"><i class="fa-regular fa-heart othera"></i>Favourites</a>
+        <a href="#"><i class="fa-solid fa-cart-shopping othera"></i>Basket</a>
+      </div>
+
       <div id="third">
         <h1>
           <a href="/home.html" class="home">Home</a> |
@@ -174,7 +211,7 @@
         <img
           src="/public/dt.png"
           alt="Logo"
-          style="width: 60px; height: 60px"
+          style="width: 100px; height: 60px"
         />
 
         <!-- Address -->

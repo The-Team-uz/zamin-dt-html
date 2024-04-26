@@ -33,7 +33,9 @@
 
       <!-- Second -->
       <div id="second" class="fix">
-        <img src="./public/dt.png" alt="Logo" class="logo" />
+        <a href="/home.html">
+          <img src="./public/dt.png" alt="Logo" class="logo" />
+        </a>
         <!-- Big navbar -->
         <nav class="links">
           <a href="/home.html" class="thisa">Home</a>
@@ -304,11 +306,11 @@
     const productElement = document.createElement("div");
     productElement.classList.add("card");
 
+    const productElementDiv = document.createElement("div");
+
     const cardImage = document.createElement("img");
     cardImage.classList.add("card_image");
     cardImage.src = element.image;
-
-    const productElementdiv = document.createElement("div");
 
     const cardPrice = document.createElement("p");
     let formatPrice = element.price.toLocaleString();
@@ -334,10 +336,8 @@
     heart.classList.add("fa-heart");
 
     cardFooter.append(buttonBuy, heart);
-    productElementdiv.append( cardDesc, cardPrice, cardFooter)
-
-    productElement.append(cardImage,productElementdiv);
-
+    productElementDiv.append(cardDesc, cardPrice, cardFooter);
+    productElement.append(cardImage, productElementDiv);
     wrapper.appendChild(productElement);
   });
 </script>
