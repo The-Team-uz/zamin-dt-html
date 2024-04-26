@@ -102,12 +102,12 @@ window.addEventListener("scroll", function () {
       fixedDiv.classList.add("fixed");
       content.style.marginTop = 20 + fixedDiv.offsetHeight + "px";
     } else {
+      console.log('aaaa')
       fixedDiv.classList.remove("fixed");
-      if (scrollPosition > fixedDiv.offsetHeight) {
+      if (scrollPosition > fixedDiv.offsetHeight+20) {
         fixedDiv.classList.remove("sticky");
         fixedDiv.classList.add("fixed");
         content.style.marginTop = 20 + fixedDiv.offsetHeight + "px";
-      } else {
         fixedDiv.classList.add("sticky");
         fixedDiv.classList.remove("fixed");
         content.style.marginTop = "20px";
