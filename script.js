@@ -95,28 +95,38 @@ window.addEventListener("scroll", function () {
   var fixedDiv = document.getElementById("second");
   var firstDiv = document.getElementById("first");
   var thirdDiv = document.getElementById("third");
-  var content = document.getElementsByClassName("title")[0];
+  var contents = document.querySelectorAll(".title");
 
   if (scrollPosition > firstDiv.offsetHeight) {
     if (!thirdDiv) {
       fixedDiv.classList.add("fixed");
-      content.style.marginTop = 20 + fixedDiv.offsetHeight + "px";
+      contents.forEach((content, index) => {
+        content.style.marginTop = 30 + fixedDiv.offsetHeight + "px";
+      });
     } else {
       console.log('aaaa')
       fixedDiv.classList.remove("fixed");
-      if (scrollPosition > fixedDiv.offsetHeight+20) {
+      if (scrollPosition > fixedDiv.offsetHeight + 20) {
         fixedDiv.classList.remove("sticky");
         fixedDiv.classList.add("fixed");
-        content.style.marginTop = 20 + fixedDiv.offsetHeight + "px";
+        contents.forEach((content, index) => {
+          content.style.marginTop = 30 + fixedDiv.offsetHeight + "px";
+        });
+      } else {
         fixedDiv.classList.add("sticky");
         fixedDiv.classList.remove("fixed");
-        content.style.marginTop = "20px";
+        contents.forEach((content, index) => {
+          content.style.marginTop = "30px";
+        });
       }
     }
   } else {
     fixedDiv.classList.remove("fixed");
     fixedDiv.classList.remove("sticky");
-    content.style.marginTop = "20px";
+    contents.forEach((content, index) => {
+      content.style.marginTop = "30px";
+    });
+
   }
 });
 

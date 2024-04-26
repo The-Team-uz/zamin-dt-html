@@ -416,14 +416,13 @@ html {
 }
 .title h4 {
   color: #8390a2;
-  margin-top: 0px;
+  margin-top: 18px;
   font-size: 17px;
   font-weight: 500;
 }
 .title .big-heart {
-  font-size: 100px;
+  font-size: 80px;
   color: #dfe2e9;
-  margin-bottom: 20px;
 }
 .title .home_btn {
   margin-top: 45px;
