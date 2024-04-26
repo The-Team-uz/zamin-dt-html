@@ -77,12 +77,18 @@
 
       <!-- Hiding bottom menu -->
       <div class="bottom_menu">
-        <a href="/home.html"><i class="fa-solid fa-house thisa"></i>Home</a>
-        <a href="/products.html"
-          ><i class="fa-solid fa-box othera"></i>Products</a
-        >
-        <a href="#"><i class="fa-regular fa-heart othera"></i>Favourites</a>
-        <a href="#"><i class="fa-solid fa-cart-shopping othera"></i>Basket</a>
+        <div onclick="home()" style="cursor: pointer;">
+          <a><i class="fa-solid fa-house othera"></i>Home</a>
+        </div>
+        <div onclick="products()" style="cursor: pointer;">
+          <a><i class="fa-solid fa-box othera"></i>Products</a>
+        </div>
+        <div onclick="favourites()" style="cursor: pointer;">
+          <a><i class="fa-regular fa-heart othera"></i>Favourites</a>
+        </div>
+        <div onclick="basket()" style="cursor: pointer;">
+          <a><i class="fa-solid fa-cart-shopping othera"></i>Basket</a>
+        </div>
       </div>
 
       <!-- Third -->
@@ -107,7 +113,7 @@
         <img
           src="/public/dt.png"
           alt="Logo"
-          style="width: 60px; height: 60px"
+          style="width: 100px; height: 60px"
         />
 
         <!-- Address -->

@@ -84,17 +84,23 @@
 
       <!-- Hiding bottom menu -->
       <div class="bottom_menu">
-        <a href="/home.html"><i class="fa-solid fa-house thisa"></i>Home</a>
-        <a href="/products.html"
-          ><i class="fa-solid fa-box othera"></i>Products</a
-        >
-        <a href="#"><i class="fa-regular fa-heart othera"></i>Favourites</a>
-        <a href="#"><i class="fa-solid fa-cart-shopping othera"></i>Basket</a>
+        <div onclick="home()" style="cursor: pointer;">
+          <a><i class="fa-solid fa-house othera"></i>Home</a>
+        </div>
+        <div onclick="products()" style="cursor: pointer;">
+          <a><i class="fa-solid fa-box othera"></i>Products</a>
+        </div>
+        <div onclick="favourites()" style="cursor: pointer;">
+          <a><i class="fa-regular fa-heart othera"></i>Favourites</a>
+        </div>
+        <div onclick="basket()" style="cursor: pointer;">
+          <a><i class="fa-solid fa-cart-shopping othera"></i>Basket</a>
+        </div>
       </div>
     </div>
 
     <!-- SWIPERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR -->
-    <div class="carusel">
+    <div class="carusel title">
       <div class="swiper">
         <div class="swiper-wrapper"></div>
         <div class="swiper-pagination"></div>
@@ -107,7 +113,7 @@
     </div>
 
     <div class="wrapper">
-      <div class="card">
+      <div class="card" onclick="openNewPage()">
         <img
           src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
           alt=""
@@ -176,7 +182,7 @@
           src="/public/dt.png"
           alt="Logo"
           class="bottom_logo"
-          style="width: 60px; height: 60px"
+          style="width: 100px; height: 60px"
         />
 
         <!-- Address -->
@@ -339,5 +345,8 @@
     productElementDiv.append(cardDesc, cardPrice, cardFooter);
     productElement.append(cardImage, productElementDiv);
     wrapper.appendChild(productElement);
+    productElement.addEventListener("click", () => {
+      window.location.href = "single_product.html";
+    });
   });
 </script>

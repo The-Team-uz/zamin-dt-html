@@ -80,12 +80,18 @@
 
       <!-- Hiding bottom menu -->
       <div class="bottom_menu">
-        <a href="/home.html"><i class="fa-solid fa-house othera"></i>Home</a>
-        <a href="/products.html"
-          ><i class="fa-solid fa-box thisa"></i>Products</a
-        >
-        <a href="#"><i class="fa-regular fa-heart othera"></i>Favourites</a>
-        <a href="#"><i class="fa-solid fa-cart-shopping othera"></i>Basket</a>
+        <div onclick="home()" style="cursor: pointer;">
+          <a><i class="fa-solid fa-house othera"></i>Home</a>
+        </div>
+        <div onclick="products()" style="cursor: pointer;">
+          <a><i class="fa-solid fa-box othera"></i>Products</a>
+        </div>
+        <div onclick="favourites()" style="cursor: pointer;">
+          <a><i class="fa-regular fa-heart othera"></i>Favourites</a>
+        </div>
+        <div onclick="basket()" style="cursor: pointer;">
+          <a><i class="fa-solid fa-cart-shopping othera"></i>Basket</a>
+        </div>
       </div>
 
       <!-- Third -->
@@ -108,7 +114,7 @@
           alt=""
           class="card_image"
         />
-        <div>
+        <div class="card_no_image">
           <p class="card_description">
             Стиральная машина Samsung WW70AGAS22AELD
           </p>
@@ -128,7 +134,7 @@
         <img
           src="/public/dt.png"
           alt="Logo"
-          style="width: 60px; height: 60px"
+          style="width: 100px; height: 60px"
         />
 
         <!-- Address -->
@@ -230,6 +236,7 @@
     productElement.classList.add("card");
 
     const productElementDiv = document.createElement("div");
+    productElementDiv.classList.add('card_no_image')
 
     const cardImage = document.createElement("img");
     cardImage.classList.add("card_image");
@@ -262,5 +269,8 @@
     productElementDiv.append(cardDesc, cardPrice, cardFooter);
     productElement.append(cardImage, productElementDiv);
     wrapper.appendChild(productElement);
+    productElement.addEventListener("click", () => {
+      window.location.href = "single_product.html";
+    });
   });
 </script>
