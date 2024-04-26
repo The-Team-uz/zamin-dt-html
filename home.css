@@ -162,6 +162,7 @@ html {
   color: #8390a2;
   font-size: 16px;
   border-radius: 5px;
+  cursor: pointer;
 }
 #main #second .buttons .loginbtn {
   padding: 12px 20px;
@@ -779,8 +780,174 @@ html {
   font-size: 16px;
 }
 
+.container {
+  margin: 20px 10%;
+  padding: 20px;
+  border: 1px solid #dfe2e9;
+  border-radius: 1rem;
+  background-color: white;
+  display: flex;
+  gap: 20px;
+}
+.container h5 {
+  color: #8390a2;
+  font-size: 14px;
+}
+.container h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #48545d;
+}
+.container .hr {
+  border: 0.5px solid #dfe2e9;
+}
+.container span {
+  color: #8390a2;
+  font-size: 14px;
+}
+.container .image {
+  width: 120px;
+}
+.container .image img {
+  border-radius: 0.5rem;
+  border: 1px solid #dfe2e9;
+  width: 100%;
+}
+.container .infos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+.container .infos .first_info h5 {
+  color: #48545d;
+}
+.container .infos .second_info {
+  display: flex;
+  gap: 20px;
+}
+.container .infos .second_info .left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.container .infos .second_info .left h5 {
+  margin-top: 10px;
+}
+.container .infos .second_info .left input {
+  width: 170px;
+  outline: none;
+  height: 35px;
+  padding: 10px;
+  border-radius: 0.5rem;
+  border: 1px solid #dfe2e9;
+  color: #48545d;
+  font-size: 15px;
+}
+.container .infos .second_info .left .counter {
+  display: flex;
+  font-size: 25px;
+  justify-content: space-between;
+  width: 170px;
+}
+.container .infos .second_info .left .counter .minus {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border: 1px solid #dfe2e9;
+  color: #48545d;
+}
+.container .infos .second_info .left .counter .plus {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border: 1px solid #dfe2e9;
+  color: #48545d;
+}
+.container .infos .second_info .left .counter .minus_unable {
+  border: 1px solid #eceff7;
+  color: #eceff7;
+}
+.container .infos .second_info .left .counter .minus_able {
+  border: 1px solid #dfe2e9;
+  color: #48545d;
+}
+.container .infos .second_info .left .counter .plus_unable {
+  border: 1px solid #eceff7;
+  color: #eceff7;
+}
+.container .infos .second_info .left .counter .minus,
+.container .infos .second_info .left .counter .plus {
+  width: 42px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+.container .infos .second_info .left .counter .number {
+  border: 1px solid #dfe2e9;
+  width: 90px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+.container .infos .second_info .right {
+  width: 100%;
+  resize: none;
+  border-radius: 0.5rem;
+  border: 1px solid #dfe2e9;
+  padding: 15px;
+  outline: none;
+}
+.container .infos .third_info {
+  display: flex;
+  justify-content: space-between;
+}
+.container .infos .third_info h5 {
+  margin-bottom: 5px;
+}
+.container .infos .third_info .info_btn {
+  height: 42px;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #f8d24a;
+  font-weight: 700;
+  cursor: pointer;
+}
+.container .basket_btns {
+  display: flex;
+  gap: 10px;
+  height: 30px;
+}
+.container .basket_btns .fa-rectangle-xmark {
+  font-size: 30px;
+  color: rgb(224, 78, 78);
+  cursor: pointer;
+}
+.container .basket_btns .fa-heart {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border: 1px solid #dfe2e9;
+  color: #f8d24a;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.container .basket_btns .heart:hover {
+  background-color: #f8d24a;
+  color: #000;
+}
+.container .basket_btns .fill-heart:hover {
+  background-color: #f8d24a;
+  color: white;
+}
+
 #footer {
-  margin-top: 50px;
+  margin-top: 30px;
   border-top: 1px solid #dfe2e9;
 }
 #footer #first {

@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   regular_hearts.forEach((regular_heart, index) => {
     regular_heart.addEventListener("click", () => {
-      solid_hearts[index].style.display = "block";
+      solid_hearts[index].style.display = "flex";
       regular_heart.style.display = "none";
     });
   });
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
   solid_hearts.forEach((solid_heart, index) => {
     solid_heart.addEventListener("click", () => {
       solid_heart.style.display = "none";
-      regular_hearts[index].style.display = "block";
+      regular_hearts[index].style.display = "flex";
     });
   });
 });
@@ -104,7 +104,7 @@ window.addEventListener("scroll", function () {
         content.style.marginTop = 30 + fixedDiv.offsetHeight + "px";
       });
     } else {
-      console.log('aaaa')
+      console.log("aaaa");
       fixedDiv.classList.remove("fixed");
       if (scrollPosition > fixedDiv.offsetHeight + 20) {
         fixedDiv.classList.remove("sticky");
@@ -126,7 +126,6 @@ window.addEventListener("scroll", function () {
     contents.forEach((content, index) => {
       content.style.marginTop = "30px";
     });
-
   }
 });
 
@@ -145,3 +144,52 @@ function favourites() {
 function basket() {
   window.location.href = "basket.html";
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const minusBtn = document.querySelector(".minus");
+  const plusBtn = document.querySelector(".plus");
+  const numberDisplay = document.querySelector(".number");
+  const totalPrice = document.querySelector(".total_price");
+  const tPrice = document.querySelector(".t_price");
+  let count = 1;
+  minusBtn.classList.add("minus_unable");
+
+  function incrementCount() {
+    if (count < 20) {
+      count++;
+      updateDisplay();
+    }
+  }
+
+  function decrementCount() {
+    if (count > 1) {
+      count--;
+      updateDisplay();
+    }
+  }
+
+  function updateDisplay() {
+    numberDisplay.textContent = count;
+    let price = count * 7100000;
+    price = price.toLocaleString();
+    totalPrice.textContent = count + " " + "/" + " " + price;
+    tPrice.texContent = price;
+    if (count == 1) {
+      minusBtn.classList.remove("minus_able");
+      minusBtn.classList.add("minus_unable");
+    } else {
+      minusBtn.classList.remove("minus_unable");
+      minusBtn.classList.add("minus_able");
+    }
+    if (count == 20) {
+      plusBtn.classList.add("plus_unable");
+      plusBtn.classList.remove("plus_able");
+    } else {
+      plusBtn.classList.remove("plus_unable");
+      plusBtn.classList.add("plus_able");
+    }
+  }
+
+  // Event listeners for the plus and minus buttons
+  plusBtn.addEventListener("click", incrementCount);
+  minusBtn.addEventListener("click", decrementCount);
+});

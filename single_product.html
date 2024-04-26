@@ -95,7 +95,7 @@
           <a><i class="fa-solid fa-cart-shopping othera"></i>Basket</a>
         </div>
       </div>
-      
+
       <!-- Third -->
       <div id="third">
         <h1>
@@ -323,53 +323,7 @@
       moreLink.textContent = "... More";
     }
   }
-  document.addEventListener("DOMContentLoaded", function () {
-    const minusBtn = document.querySelector(".minus");
-    const plusBtn = document.querySelector(".plus");
-    const numberDisplay = document.querySelector(".number");
-    const totalPrice = document.querySelector(".total_price");
-    let count = 1;
-    minusBtn.classList.add("minus_unable");
 
-    function incrementCount() {
-      if (count < 20) {
-        count++;
-        updateDisplay();
-      }
-    }
-
-    function decrementCount() {
-      if (count > 1) {
-        count--;
-        updateDisplay();
-      }
-    }
-
-    function updateDisplay() {
-      numberDisplay.textContent = count;
-      let price = count * 7100000;
-      price = price.toLocaleString();
-      totalPrice.textContent = count + " " + "/" + " " + price;
-      if (count == 1) {
-        minusBtn.classList.remove("minus_able");
-        minusBtn.classList.add("minus_unable");
-      } else {
-        minusBtn.classList.remove("minus_unable");
-        minusBtn.classList.add("minus_able");
-      }
-      if (count == 20) {
-        plusBtn.classList.add("plus_unable");
-        plusBtn.classList.remove("plus_able");
-      } else {
-        plusBtn.classList.remove("plus_unable");
-        plusBtn.classList.add("plus_able");
-      }
-    }
-
-    // Event listeners for the plus and minus buttons
-    plusBtn.addEventListener("click", incrementCount);
-    minusBtn.addEventListener("click", decrementCount);
-  });
   function showVariants() {
     var variant = document.querySelector(".delivery_variant");
     variant.style.display = "block";

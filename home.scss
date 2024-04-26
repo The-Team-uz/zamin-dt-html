@@ -170,6 +170,7 @@ html {
         color: $gray;
         font-size: 16px;
         border-radius: 5px;
+        cursor: pointer;
       }
       .loginbtn {
         padding: 12px 20px;
@@ -812,9 +813,181 @@ html {
   }
 }
 
+///////////////////////////////////////Basket
+.container {
+  margin: 20px 10%;
+  padding: 20px;
+  border: 1px solid $border_color;
+  border-radius: 1rem;
+  background-color: $white;
+  display: flex;
+  gap: 20px;
+  h5 {
+    color: $gray;
+    font-size: 14px;
+  }
+  h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: $route_gray;
+  }
+  .hr {
+    border: .5px solid $border_color;
+  }
+
+  span {
+    color: $gray;
+    font-size: 14px;
+  }
+  .image {
+    width: 120px;
+    img {
+      border-radius: 0.5rem;
+      border: 1px solid $border_color;
+      width: 100%;
+    }
+  }
+  .infos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+
+    .first_info {
+      h5 {
+        color: $route_gray;
+      }
+    }
+    .second_info {
+      display: flex;
+      gap: 20px;
+      .left {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        h5 {
+          margin-top: 10px;
+        }
+        input {
+          width: 170px;
+          outline: none;
+          height: 35px;
+          padding: 10px;
+          border-radius: 0.5rem;
+          border: 1px solid $border_color;
+          color: $route_gray;
+          font-size: 15px;
+        }
+        .counter {
+          display: flex;
+          font-size: 25px;
+          justify-content: space-between;
+          width: 170px;
+          .minus {
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+            border: 1px solid $border_color;
+            color: $route_gray;
+          }
+          .plus {
+            border-top-right-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            border: 1px solid $border_color;
+            color: $route_gray;
+          }
+          .minus_unable {
+            border: 1px solid #eceff7;
+            color: #eceff7;
+          }
+          .minus_able {
+            border: 1px solid $border_color;
+            color: $route_gray;
+          }
+          .plus_unable {
+            border: 1px solid #eceff7;
+            color: #eceff7;
+          }
+          .minus,
+          .plus {
+            width: 42px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+          }
+          .number {
+            border: 1px solid $border_color;
+            width: 90px;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 400;
+          }
+        }
+      }
+      .right {
+        width: 100%;
+        resize: none;
+        border-radius: 0.5rem;
+        border: 1px solid $border_color;
+        padding: 15px;
+        outline: none;
+      }
+    }
+    .third_info {
+      display: flex;
+      justify-content: space-between;
+      h5 {
+        margin-bottom: 5px;
+      }
+      .info_btn {
+        height: 42px;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 0.5rem;
+        background-color: $green;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    }
+  }
+  .basket_btns {
+    display: flex;
+    gap: 10px;
+    height: 30px;
+    .fa-rectangle-xmark {
+      font-size: 30px;
+      color: rgb(224, 78, 78);
+      cursor: pointer;
+    }
+    .fa-heart {
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      border: 1px solid $border_color;
+      color: $green;
+      border-radius: 0.3rem;
+      cursor: pointer;
+    }
+    .heart:hover{
+      background-color: $green;
+      color: #000;
+    }
+    .fill-heart:hover{
+       background-color: $green;
+      color: $white;
+    }
+
+  }
+}
+
 // // // // // FOoter
 #footer {
-  margin-top: 50px;
+  margin-top: 30px;
   border-top: 1px solid $border_color;
   #first {
     display: flex;
@@ -1038,6 +1211,7 @@ html {
         }
         .basket {
           padding: 6px;
+
           span {
             display: none;
           }
