@@ -31,7 +31,7 @@
         <nav class="links">
           <a href="/home.html" class="othera">Home</a>
           <a href="/products.html" class="othera">All products</a>
-          <a href="/videos.html" class="thisa">Video reviews</a>
+          <a href="/videos.html" class="othera">Video reviews</a>
           <a href="/about.html" class="othera">About Us</a>
         </nav>
         <div class="buttons">
@@ -69,7 +69,7 @@
 
       <!-- Hiding menu -->
       <div class="hiding_menu" style="display: none" id="hide">
-        <a href="/home.html" class="thisa mini">Home</a>
+        <a href="/home.html" class="othera mini">Home</a>
         <a href="/products.html" class="othera mini">All products</a>
         <a href="/videos.html" class="othera">Video reviews</a>
         <a href="/about.html" class="othera">About Us</a>
@@ -84,7 +84,7 @@
           <a><i class="fa-solid fa-box othera"></i>Products</a>
         </div>
         <div onclick="favourites()" style="cursor: pointer">
-          <a><i class="fa-regular fa-heart othera"></i>Favourites</a>
+          <a><i class="fa-solid fa-heart thisa"></i>Favourites</a>
         </div>
         <div onclick="basket()" style="cursor: pointer">
           <a><i class="fa-solid fa-cart-shopping othera"></i>Basket</a>
@@ -101,9 +101,56 @@
     </div>
 
     <!-- VIDEOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS -->
-    <div class="title">
-      <h1>Video reviews</h1>
-      <h4>Video reviews of the product</h4>
+    <div class="title first" style="display: none">
+      <i class="fa-solid fa-heart big-heart"></i>
+      <h1>The favourites list is empty</h1>
+      <h4>
+        Add products you like to your favourites list so you can watch them
+        later or make a purchase
+      </h4>
+      <button class="home_btn" onclick="home()">Home</button>
+    </div>
+
+    <div class="title second">
+      <div class="wrapper" style="text-align: start">
+        <div class="card">
+          <img
+            onclick="openNewPage()"
+            src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
+            alt=""
+            class="card_image"
+          />
+          <div>
+            <p class="card_description" onclick="openNewPage()">
+              Стиральная машина Samsung WW70AGAS22AELD
+            </p>
+            <p class="card_price" onclick="openNewPage()">8 000 000 som/sht</p>
+            <div class="card_footer">
+              <button class="card_button">Add to basket</button>
+              <!-- <i class="fa-regular fa-heart heart" style="display: none"></i> -->
+              <i class="fa-solid fa-heart" onclick="toggleVisibility(this)"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            onclick="openNewPage()"
+            src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
+            alt=""
+            class="card_image"
+          />
+          <div>
+            <p class="card_description" onclick="openNewPage()">
+              Стиральная машина Samsung
+            </p>
+            <p class="card_price" onclick="openNewPage()">8 000 000 som/sht</p>
+            <div class="card_footer">
+              <button class="card_button">Add to basket</button>
+              <i class="fa-solid fa-heart" onclick="toggleVisibility(this)"></i>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- FOOOOOTERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR -->
@@ -157,3 +204,23 @@
     </div>
   </body>
 </html>
+
+<script>
+  function toggleVisibility(element) {
+    element.closest(".card").classList.add("hidden");
+    checkCardsVisibility();
+  }
+  function checkCardsVisibility() {
+    var cards = document.querySelectorAll(".card");
+    var visibleCards = Array.from(cards).filter(
+      (card) => !card.classList.contains("hidden")
+    );
+
+    if (visibleCards.length === 0) {
+      var second = document.querySelector(".second");
+      second.style.display = "none";
+      var first = document.querySelector(".first");
+      first.style.display = "block";
+    }
+  }
+</script>

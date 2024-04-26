@@ -124,7 +124,7 @@ html {
         position: relative;
       }
       .thisa {
-        color: black;
+        color: $route_gray;
         border-bottom: 2px solid $green;
         padding-bottom: 5px;
         font-weight: 500;
@@ -149,7 +149,7 @@ html {
       }
 
       .othera:hover {
-        color: black;
+        color: $route_gray;
       }
     }
     .buttons {
@@ -393,12 +393,19 @@ html {
     transition: all ease-in-out 0.3s;
     border-radius: 0.3rem;
   }
+  .fill-heart:hover {
+    cursor: pointer;
+    color: white;
+    background-color: $green;
+    transition: all ease-in-out 0.3s;
+    border-radius: 0.3rem;
+  }
   .card_price {
     color: $gray;
     font-weight: 700;
     margin-bottom: 10px;
   }
-  .card_no_image{
+  .card_no_image {
     width: 100%;
   }
   .card_description {
@@ -422,6 +429,34 @@ html {
     color: $gray;
     margin-top: 18px;
     font-size: 17px;
+  }
+  .big-heart {
+    font-size: 100px;
+    color: $border_color;
+    margin-bottom: 20px;
+  }
+  .home_btn {
+    margin-top: 45px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: $green;
+    font-weight: 600;
+  }
+  .home_btn:hover {
+    background-color: $green_pale;
+  }
+  .wrapper {
+    .card {
+      .card_footer {
+        .fa-heart:hover {
+          color: white;
+        }
+      }
+    }
+    .hidden {
+      display: none;
+    }
   }
 }
 
@@ -734,7 +769,7 @@ html {
         border-radius: 0.5rem;
         border: none;
         background-color: $green;
-        color: $white;
+        color: black;
         font-size: 16px;
       }
     }
@@ -925,7 +960,6 @@ html {
 }
 
 @media screen and (max-width: 640px) {
- 
   #main {
     #second {
       padding: 5px 20px;
@@ -999,7 +1033,7 @@ html {
   .mini {
     display: none;
   }
- 
+
   #footer {
     padding-bottom: 50px;
     #first {

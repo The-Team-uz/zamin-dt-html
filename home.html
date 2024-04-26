@@ -44,7 +44,7 @@
           <a href="/about.html" class="othera">About Us</a>
         </nav>
         <div class="buttons">
-          <i
+          <i onclick="favourites()"
             class="fa-solid fa-heart likeButton"
             style="color: #f1456e; font-size: 18px"
           ></i>
@@ -84,16 +84,16 @@
 
       <!-- Hiding bottom menu -->
       <div class="bottom_menu">
-        <div onclick="home()" style="cursor: pointer;">
+        <div onclick="home()" style="cursor: pointer">
           <a><i class="fa-solid fa-house othera"></i>Home</a>
         </div>
-        <div onclick="products()" style="cursor: pointer;">
+        <div onclick="products()" style="cursor: pointer">
           <a><i class="fa-solid fa-box othera"></i>Products</a>
         </div>
-        <div onclick="favourites()" style="cursor: pointer;">
+        <div onclick="favourites()" style="cursor: pointer">
           <a><i class="fa-regular fa-heart othera"></i>Favourites</a>
         </div>
-        <div onclick="basket()" style="cursor: pointer;">
+        <div onclick="basket()" style="cursor: pointer">
           <a><i class="fa-solid fa-cart-shopping othera"></i>Basket</a>
         </div>
       </div>
@@ -113,20 +113,27 @@
     </div>
 
     <div class="wrapper">
-      <div class="card" onclick="openNewPage()">
+      <div class="card">
         <img
+          onclick="openNewPage()"
           src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
           alt=""
           class="card_image"
         />
         <div>
-          <p class="card_description">
+          <p class="card_description" onclick="openNewPage()">
             Стиральная машина Samsung WW70AGAS22AELD
           </p>
-          <p class="card_price">8 000 000 som/sht</p>
+          <p class="card_price" onclick="openNewPage()">8 000 000 som/sht</p>
           <div class="card_footer">
             <button class="card_button">Add to basket</button>
-            <i class="fa-regular fa-heart"></i>
+            <i
+              class="fa-regular fa-heart heart"
+            ></i>
+            <i
+              class="fa-solid fa-heart fill-heart"
+              style="display: none"
+            ></i>
           </div>
         </div>
       </div>
@@ -140,35 +147,49 @@
     <div class="wrapper">
       <div class="card">
         <img
+          onclick="openNewPage()"
           src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
           alt=""
           class="card_image"
         />
         <div>
-          <p class="card_description">
+          <p class="card_description" onclick="openNewPage()">
             Стиральная машина Samsung WW70AGAS22AELD
           </p>
-          <p class="card_price">8 000 000 som/sht</p>
+          <p class="card_price" onclick="openNewPage()">8 000 000 som/sht</p>
           <div class="card_footer">
             <button class="card_button">Add to basket</button>
-            <i class="fa-regular fa-heart"></i>
+            <i
+              class="fa-regular fa-heart heart"
+            ></i>
+            <i
+              class="fa-solid fa-heart fill-heart"
+              style="display: none"
+            ></i>
           </div>
         </div>
       </div>
       <div class="card">
         <img
+          onclick="openNewPage()"
           src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
           alt=""
           class="card_image"
         />
         <div>
-          <p class="card_description">
+          <p class="card_description" onclick="openNewPage()">
             Стиральная машина Samsung WW70AGAS22AELD
           </p>
-          <p class="card_price">8 000 000 som/sht</p>
+          <p class="card_price" onclick="openNewPage()">8 000 000 som/sht</p>
           <div class="card_footer">
             <button class="card_button">Add to basket</button>
-            <i class="fa-regular fa-heart"></i>
+            <i
+              class="fa-regular fa-heart heart"
+            ></i>
+            <i
+              class="fa-solid fa-heart fill-heart"
+              style="display: none"
+            ></i>
           </div>
         </div>
       </div>
@@ -340,13 +361,35 @@
     const heart = document.createElement("i");
     heart.classList.add("fa-regular");
     heart.classList.add("fa-heart");
+    heart.classList.add("heart");
 
-    cardFooter.append(buttonBuy, heart);
+    const solid_heart = document.createElement("i");
+    solid_heart.classList.add("fa-solid");
+    solid_heart.classList.add("fa-heart");
+    solid_heart.classList.add("fill-heart");
+    solid_heart.style.display = "none";
+
+    cardFooter.append(buttonBuy, heart, solid_heart);
     productElementDiv.append(cardDesc, cardPrice, cardFooter);
     productElement.append(cardImage, productElementDiv);
     wrapper.appendChild(productElement);
-    productElement.addEventListener("click", () => {
+    cardDesc.addEventListener("click", () => {
       window.location.href = "single_product.html";
+    });
+    cardPrice.addEventListener("click", () => {
+      window.location.href = "single_product.html";
+    });
+    cardImage.addEventListener("click", () => {
+      window.location.href = "single_product.html";
+    });
+
+    heart.addEventListener("click", () => {
+      solid_heart.style.display = "block";
+      heart.style.display = "none";
+    });
+    solid_heart.addEventListener("click", () => {
+      solid_heart.style.display = "none";
+      heart.style.display = "block";
     });
   });
 </script>
