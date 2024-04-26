@@ -219,5 +219,8 @@
     productElement.append(cardImage, cardDesc, cardPrice, cardFooter);
 
     wrapper.appendChild(productElement);
+    productElement.addEventListener("click", () => {
+      window.location.href = "single_product.html";
+    });
   });
 </script>

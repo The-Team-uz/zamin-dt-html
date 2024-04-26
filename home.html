@@ -57,7 +57,7 @@
     </div>
 
     <!-- SWIPERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR -->
-    <div class="carusel">
+    <div class="carusel title">
       <div class="swiper">
         <div class="swiper-wrapper"></div>
         <div class="swiper-pagination"></div>
@@ -70,7 +70,7 @@
     </div>
 
     <div class="wrapper">
-      <div class="card">
+      <div class="card" onclick="openNewPage()">
         <img
           src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
           alt=""
@@ -172,8 +172,6 @@
 </html>
 
 <script type="module">
-
-
   import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
   const swiperWrapper = document.querySelector(".swiper-wrapper");
   const slides = [
@@ -290,5 +288,8 @@
     productElement.append(cardImage, cardDesc, cardPrice, cardFooter);
 
     wrapper.appendChild(productElement);
+    productElement.addEventListener("click", () => {
+      window.location.href = "single_product.html";
+    });
   });
 </script>

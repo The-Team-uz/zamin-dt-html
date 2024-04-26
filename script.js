@@ -31,10 +31,32 @@ window.addEventListener("scroll", function () {
   var scrollPosition = window.scrollY;
   var fixedDiv = document.getElementById("second");
   var firstDiv = document.getElementById("first");
+  var thirdDiv = document.getElementById("third");
+  var content = document.getElementsByClassName("title")[0];
 
   if (scrollPosition > firstDiv.offsetHeight) {
-    fixedDiv.classList.add("fixed");
+    if (!thirdDiv) {
+      fixedDiv.classList.add("fixed");
+      content.style.marginTop = 20 + fixedDiv.offsetHeight + "px";
+    } else {
+      fixedDiv.classList.remove("fixed");
+      if (scrollPosition > fixedDiv.offsetHeight) {
+        fixedDiv.classList.remove("sticky");
+        fixedDiv.classList.add("fixed");
+        content.style.marginTop = 20 + fixedDiv.offsetHeight + "px";
+      } else {
+        fixedDiv.classList.add("sticky");
+        fixedDiv.classList.remove("fixed");
+        content.style.marginTop = "20px";
+      }
+    }
   } else {
     fixedDiv.classList.remove("fixed");
+    fixedDiv.classList.remove("sticky");
+    content.style.marginTop = "20px";
   }
 });
+
+function openNewPage() {
+  window.location.href = "single_product.html";
+}

@@ -21,13 +21,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.fixed {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  border-bottom: 1px solid #dfe2e9;
-}
-
 #back-to-top {
   display: flex;
   align-items: center;
@@ -89,7 +82,6 @@ html {
   background-color: white;
   align-items: center;
   justify-content: space-between;
-  z-index: 1000;
 }
 #main #second .logo {
   width: 50px;
@@ -156,6 +148,18 @@ html {
   font-size: 16px;
   border-radius: 5px;
 }
+#main .fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #dfe2e9;
+  z-index: 1000;
+}
+#main .sticky {
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #dfe2e9;
+}
 #main #third {
   padding: 16px 10%;
   border-bottom: 0.5px solid #dfe2e9;
@@ -191,7 +195,7 @@ html {
 }
 
 .carusel {
-  padding: 2% 10%;
+  padding: 0 10% 0 10%;
 }
 .carusel .swiper {
   border-radius: 1rem;
@@ -280,8 +284,9 @@ html {
 }
 
 .title {
-  margin: 4%;
   text-align: center;
+  margin-bottom: 50px;
+  margin-top: 30px;
 }
 .title h1 {
   font-size: 44px;
@@ -393,18 +398,213 @@ html {
 
 .single_product {
   padding: 0 10%;
+  margin-top: 20px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
 }
 .single_product .product_wrapper {
+  display: flex;
+  text-align: start;
+  gap: 30px;
+  background-color: white;
   padding: 30px;
   border: 1px solid #dfe2e9;
   border-radius: 1rem;
 }
+.single_product .product_wrapper .swiper {
+  width: 390px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.single_product .product_wrapper .swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #dfe2e9;
+  border-radius: 0.5rem;
+}
+.single_product .product_wrapper .swiper .swiper-slide img {
+  display: block;
+  width: 70%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.single_product .product_wrapper .swiper .mainSwiper {
+  height: 300px;
+}
+.single_product .product_wrapper .swiper .thumbs {
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.single_product .product_wrapper .swiper .thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+  border: 2px solid #549f58;
+}
+.single_product .product_wrapper .description_wrapper {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.single_product .product_wrapper .description_wrapper span {
+  color: #898989;
+  font-size: 12px;
+  font-weight: 400;
+}
+.single_product .product_wrapper .description_wrapper h3 {
+  width: 300px;
+  font-size: 18px;
+}
+.single_product .product_wrapper .description_wrapper h5 {
+  margin-top: 10px;
+  font-weight: 400;
+  line-height: 2;
+}
+.single_product .product_wrapper .description_wrapper h5 a {
+  text-decoration: none;
+  color: black;
+  font-weight: 800;
+}
+.single_product .product_wrapper .description_wrapper hr {
+  border: 0.5px solid #dfe2e9;
+}
+.single_product .product_wrapper .description_wrapper .counter {
+  margin-top: 5px;
+  display: flex;
+  font-size: 25px;
+  justify-content: space-between;
+  width: 174px;
+}
+.single_product .product_wrapper .description_wrapper .counter .minus {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border: 1px solid #dfe2e9;
+  color: #48545d;
+}
+.single_product .product_wrapper .description_wrapper .counter .plus {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  border: 1px solid #dfe2e9;
+  color: #48545d;
+}
+.single_product .product_wrapper .description_wrapper .counter .minus_unable {
+  border: 1px solid #eceff7;
+  color: #eceff7;
+}
+.single_product .product_wrapper .description_wrapper .counter .minus_able {
+  border: 1px solid #dfe2e9;
+  color: #48545d;
+}
+.single_product .product_wrapper .description_wrapper .counter .plus_unable {
+  border: 1px solid #eceff7;
+  color: #eceff7;
+}
+.single_product .product_wrapper .description_wrapper .counter .minus,
+.single_product .product_wrapper .description_wrapper .counter .plus {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+.single_product .product_wrapper .description_wrapper .counter .number {
+  border: 1px solid #dfe2e9;
+  width: 90px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
 .single_product .basket_wrapper {
-  padding: 10px;
+  background-color: white;
   border: 1px solid #dfe2e9;
   border-radius: 1rem;
+  width: 320px;
+  text-align: start;
+  height: 320px;
+}
+.single_product .basket_wrapper p {
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+.single_product .basket_wrapper p span {
+  font-size: 13px;
+  font-weight: 400;
+}
+.single_product .basket_wrapper .count {
+  padding: 10px;
+}
+.single_product .basket_wrapper .total {
+  padding: 10px;
+}
+.single_product .basket_wrapper .total span {
+  font-weight: 500;
+  font-size: 16px;
+}
+.single_product .basket_wrapper hr {
+  width: 100%;
+}
+.single_product .basket_wrapper .delivery {
+  padding: 10px;
+  position: relative;
+}
+.single_product .basket_wrapper .delivery h5 {
+  font-weight: 400;
+  padding-bottom: 10px;
+}
+.single_product .basket_wrapper .delivery span {
+  font-weight: 500;
+}
+.single_product .basket_wrapper .delivery .address {
+  font-size: 12px;
+  font-weight: 400;
+}
+.single_product .basket_wrapper .delivery .delivery_wrap {
+  border: 1px solid #dfe2e9;
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+.single_product .basket_wrapper .delivery .delivery_wrap .select {
+  cursor: pointer;
+}
+.single_product .basket_wrapper .delivery .delivery_variant {
+  display: none;
+  position: absolute;
+  width: 94%;
+  padding: 5px;
+  box-shadow: rgba(9, 30, 15, 0.2) 0px 0px 10px 0px;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+.single_product .basket_wrapper .delivery .delivery_variant .del_var_el {
+  border: 1px solid #dfe2e9;
+  border-radius: 0.5rem;
+  padding: 5px;
+  cursor: pointer;
+}
+.single_product .basket_wrapper .delivery .delivery_variant .del_var_el:hover {
+  border: 1px solid #549f58;
+  transition: all 0.2s ease-in-out;
+}
+.single_product .basket_wrapper .delivery_footer {
+  padding: 0 10px;
+}
+.single_product .basket_wrapper .delivery_footer .button {
+  padding: 10px;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #549f58;
+  color: white;
+  font-size: 16px;
 }
 
 #footer {
