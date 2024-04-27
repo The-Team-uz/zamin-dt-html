@@ -41,7 +41,7 @@
               style="color: #f1456e; font-size: 18px"
             ></i>
           </button>
-          <button type="button" class="basket">
+          <button type="button" class="basket" onclick="basket()">
             <i class="fa-solid fa-cart-shopping" style="margin-right: 5px"></i
             >Basket
           </button>
@@ -92,7 +92,7 @@
       </div>
     </div>
 
-    <!-- basketttttttttttttttttttttttttttttttt-->
+    <!-- Basketttttttttttttttttttttttttttttttt-->
     <div class="title first" style="display: none">
       <i class="fa-solid fa-cart-shopping big-heart"></i>
       <h1>The basket list is empty</h1>
@@ -107,8 +107,14 @@
       <div class="image">
         <img
           src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
-          alt=""
+          alt="Img"
         />
+        <div id="hidden_btns" class="basket_btns">
+          <i class="fa-regular fa-heart heart"></i>
+          <i class="fa-solid fa-heart fill-heart" style="display: none"></i>
+
+          <i class="fa-solid fa-rectangle-xmark" onclick="closeBasket()"></i>
+        </div>
       </div>
       <div class="infos">
         <div class="first_info">
@@ -133,7 +139,7 @@
             name=""
             class="right"
             id=""
-            cols="30"
+            cols="10"
             rows="8"
             placeholder="Commentary"
           ></textarea>
@@ -146,12 +152,12 @@
           </div>
           <div class="offer_price">
             <h5>Offer a quote:</h5>
-            <h4>7 100 000 <span>som</span></h4>
+            <h4  class="t_price">7 100 000 <span>som</span></h4>
           </div>
           <button class="info_btn">Send request</button>
         </div>
       </div>
-      <div class="basket_btns">
+      <div id="basket_btns" class="basket_btns">
         <i class="fa-regular fa-heart heart"></i>
         <i class="fa-solid fa-heart fill-heart" style="display: none"></i>
 
@@ -216,5 +222,4 @@
     document.querySelector(".container").style.display = "none";
     document.querySelector(".first").style.display = "block";
   }
-  
 </script>

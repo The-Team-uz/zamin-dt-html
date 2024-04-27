@@ -822,6 +822,20 @@ html {
   background-color: $white;
   display: flex;
   gap: 20px;
+
+  .image {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    #hidden_btns {
+      display: none;
+    }
+    img {
+      border-radius: 0.5rem;
+      border: 1px solid $border_color;
+      width: 120px;
+    }
+  }
   h5 {
     color: $gray;
     font-size: 14px;
@@ -832,20 +846,12 @@ html {
     color: $route_gray;
   }
   .hr {
-    border: .5px solid $border_color;
+    border: 0.5px solid $border_color;
   }
 
   span {
     color: $gray;
     font-size: 14px;
-  }
-  .image {
-    width: 120px;
-    img {
-      border-radius: 0.5rem;
-      border: 1px solid $border_color;
-      width: 100%;
-    }
   }
   .infos {
     display: flex;
@@ -888,12 +894,14 @@ html {
             border-bottom-left-radius: 0.5rem;
             border: 1px solid $border_color;
             color: $route_gray;
+            cursor: pointer;
           }
           .plus {
             border-top-right-radius: 0.5rem;
             border-bottom-right-radius: 0.5rem;
             border: 1px solid $border_color;
             color: $route_gray;
+            cursor: pointer;
           }
           .minus_unable {
             border: 1px solid #eceff7;
@@ -939,6 +947,8 @@ html {
     .third_info {
       display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
       h5 {
         margin-bottom: 5px;
       }
@@ -962,6 +972,10 @@ html {
       color: rgb(224, 78, 78);
       cursor: pointer;
     }
+    .fa-rectangle-xmark:hover {
+      color: rgb(251, 140, 140);
+      transition: all ease-in-out 0.1s;
+    }
     .fa-heart {
       width: 30px;
       display: flex;
@@ -973,15 +987,16 @@ html {
       border-radius: 0.3rem;
       cursor: pointer;
     }
-    .heart:hover{
+    .heart:hover {
       background-color: $green;
       color: #000;
+      transition: all ease-in-out 0.1s;
     }
-    .fill-heart:hover{
-       background-color: $green;
+    .fill-heart:hover {
+      background-color: $green;
       color: $white;
+      transition: all ease-in-out 0.1s;
     }
-
   }
 }
 
@@ -1166,6 +1181,9 @@ html {
   .single_product {
     padding: 20px;
   }
+  .container {
+    margin: 30px;
+  }
 }
 
 @media screen and (max-width: 917px) {
@@ -1180,6 +1198,27 @@ html {
     iframe {
       width: 100%;
       height: 300px;
+    }
+  }
+  .container {
+    flex-direction: column;
+    #basket_btns {
+      display: none;
+    }
+    .infos {
+      .second_info {
+        flex-wrap: wrap;
+      }
+    }
+    .image {
+      display: flex;
+      justify-content: space-between;
+      #hidden_btns {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: space-between;
+      }
     }
   }
 }

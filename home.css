@@ -789,6 +789,19 @@ html {
   display: flex;
   gap: 20px;
 }
+.container .image {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.container .image #hidden_btns {
+  display: none;
+}
+.container .image img {
+  border-radius: 0.5rem;
+  border: 1px solid #dfe2e9;
+  width: 120px;
+}
 .container h5 {
   color: #8390a2;
   font-size: 14px;
@@ -804,14 +817,6 @@ html {
 .container span {
   color: #8390a2;
   font-size: 14px;
-}
-.container .image {
-  width: 120px;
-}
-.container .image img {
-  border-radius: 0.5rem;
-  border: 1px solid #dfe2e9;
-  width: 100%;
 }
 .container .infos {
   display: flex;
@@ -855,12 +860,14 @@ html {
   border-bottom-left-radius: 0.5rem;
   border: 1px solid #dfe2e9;
   color: #48545d;
+  cursor: pointer;
 }
 .container .infos .second_info .left .counter .plus {
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
   border: 1px solid #dfe2e9;
   color: #48545d;
+  cursor: pointer;
 }
 .container .infos .second_info .left .counter .minus_unable {
   border: 1px solid #eceff7;
@@ -903,6 +910,8 @@ html {
 .container .infos .third_info {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 .container .infos .third_info h5 {
   margin-bottom: 5px;
@@ -926,6 +935,10 @@ html {
   color: rgb(224, 78, 78);
   cursor: pointer;
 }
+.container .basket_btns .fa-rectangle-xmark:hover {
+  color: rgb(251, 140, 140);
+  transition: all ease-in-out 0.1s;
+}
 .container .basket_btns .fa-heart {
   width: 30px;
   display: flex;
@@ -940,10 +953,12 @@ html {
 .container .basket_btns .heart:hover {
   background-color: #f8d24a;
   color: #000;
+  transition: all ease-in-out 0.1s;
 }
 .container .basket_btns .fill-heart:hover {
   background-color: #f8d24a;
   color: white;
+  transition: all ease-in-out 0.1s;
 }
 
 #footer {
@@ -1110,6 +1125,9 @@ html {
   .single_product {
     padding: 20px;
   }
+  .container {
+    margin: 30px;
+  }
 }
 @media screen and (max-width: 917px) {
   .req_third {
@@ -1123,6 +1141,25 @@ html {
   .second iframe {
     width: 100%;
     height: 300px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .container #basket_btns {
+    display: none;
+  }
+  .container .infos .second_info {
+    flex-wrap: wrap;
+  }
+  .container .image {
+    display: flex;
+    justify-content: space-between;
+  }
+  .container .image #hidden_btns {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-between;
   }
 }
 @media screen and (max-width: 765px) {

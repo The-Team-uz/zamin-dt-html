@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 500);
     });
   }
-
   var thisLinks = document.getElementsByClassName("thisa");
   for (var j = 0; j < thisLinks.length; j++) {
     thisLinks[j].addEventListener("click", function (event) {
@@ -27,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
 window.addEventListener("scroll", function () {
   var scrollPosition = window.scrollY;
   var fixedDiv = document.getElementById("second");
@@ -77,19 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// function changeLike(isLiked) {
-//   var regular_heart = document.querySelector(".heart");
-//   var solid_heart = document.querySelector(".fill-heart");
-//   if (!isLiked) {
-//     solid_heart.style.display = "block";
-//     regular_heart.style.display = "none";
-//     isLiked = true;
-//   } else {
-//     solid_heart.style.display = "none";
-//     regular_heart.style.display = "block";
-//     isLiked = false;
-//   }
-// }
 window.addEventListener("scroll", function () {
   var scrollPosition = window.scrollY;
   var fixedDiv = document.getElementById("second");
@@ -144,6 +131,7 @@ function favourites() {
 function basket() {
   window.location.href = "basket.html";
 }
+
 document.addEventListener("DOMContentLoaded", function () {
   const minusBtn = document.querySelector(".minus");
   const plusBtn = document.querySelector(".plus");
@@ -171,8 +159,12 @@ document.addEventListener("DOMContentLoaded", function () {
     numberDisplay.textContent = count;
     let price = count * 7100000;
     price = price.toLocaleString();
-    totalPrice.textContent = count + " " + "/" + " " + price;
-    tPrice.texContent = price;
+    if(tPrice){
+      tPrice.textContent=price+'som'
+    }
+    else{
+      totalPrice.textContent = count + " " + "/" + " " + price + " som"
+    }
     if (count == 1) {
       minusBtn.classList.remove("minus_able");
       minusBtn.classList.add("minus_unable");
