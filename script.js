@@ -124,67 +124,68 @@ document.addEventListener("DOMContentLoaded", function () {
   const tPrice = document.querySelector(".t_price");
   const offering = document.getElementById("offering");
   const offering_price = document.getElementById("offering_price");
+  if (minusBtn || plusBtn) {
+    let count = 1;
+    minusBtn.classList.add("minus_unable");
 
-  let count = 1;
-  minusBtn.classList.add("minus_unable");
-
-  function incrementCount() {
-    if (count < 20) {
-      count++;
-      updateDisplay();
+    function incrementCount() {
+      if (count < 20) {
+        count++;
+        updateDisplay();
+      }
     }
-  }
 
-  function decrementCount() {
-    if (count > 1) {
-      count--;
-      updateDisplay();
+    function decrementCount() {
+      if (count > 1) {
+        count--;
+        updateDisplay();
+      }
     }
-  }
 
-  function updateDisplay() {
-    numberDisplay.textContent = count;
-    let price = count * 7100000;
-    price = price.toLocaleString();
-    if (tPrice) {
-      tPrice.textContent = price + " som";
-      if (offering) {
-        offering.value = count * 7100000;
-        let offer = offering.value;
-        offer = (+offer).toLocaleString();
-        offering_price.textContent = offer + " som";
-        offering.addEventListener("input", function () {
-          var currentValue = parseInt(offering.value, 10);
-
-          var maxValue = parseInt(offering.getAttribute("max"), 10);
-          if (currentValue > maxValue) {
-            offering.value = maxValue;
-          }
+    function updateDisplay() {
+      numberDisplay.textContent = count;
+      let price = count * 7100000;
+      price = price.toLocaleString();
+      if (tPrice) {
+        tPrice.textContent = price + " som";
+        if (offering) {
+          offering.value = count * 7100000;
           let offer = offering.value;
           offer = (+offer).toLocaleString();
           offering_price.textContent = offer + " som";
-        });
-      }
-    } else {
-      totalPrice.textContent = count + " " + "/" + " " + price + " som";
-    }
-    if (count == 1) {
-      minusBtn.classList.remove("minus_able");
-      minusBtn.classList.add("minus_unable");
-    } else {
-      minusBtn.classList.remove("minus_unable");
-      minusBtn.classList.add("minus_able");
-    }
-    if (count == 20) {
-      plusBtn.classList.add("plus_unable");
-      plusBtn.classList.remove("plus_able");
-    } else {
-      plusBtn.classList.remove("plus_unable");
-      plusBtn.classList.add("plus_able");
-    }
-  }
+          offering.addEventListener("input", function () {
+            var currentValue = parseInt(offering.value, 10);
 
-  // Event listeners for the plus and minus buttons
-  plusBtn.addEventListener("click", incrementCount);
-  minusBtn.addEventListener("click", decrementCount);
+            var maxValue = parseInt(offering.getAttribute("max"), 10);
+            if (currentValue > maxValue) {
+              offering.value = maxValue;
+            }
+            let offer = offering.value;
+            offer = (+offer).toLocaleString();
+            offering_price.textContent = offer + " som";
+          });
+        }
+      } else {
+        totalPrice.textContent = count + " " + "/" + " " + price + " som";
+      }
+      if (count == 1) {
+        minusBtn.classList.remove("minus_able");
+        minusBtn.classList.add("minus_unable");
+      } else {
+        minusBtn.classList.remove("minus_unable");
+        minusBtn.classList.add("minus_able");
+      }
+      if (count == 20) {
+        plusBtn.classList.add("plus_unable");
+        plusBtn.classList.remove("plus_able");
+      } else {
+        plusBtn.classList.remove("plus_unable");
+        plusBtn.classList.add("plus_able");
+      }
+    }
+
+    // Event listeners for the plus and minus buttons
+    plusBtn.addEventListener("click", incrementCount);
+    minusBtn.addEventListener("click", decrementCount);
+  }
 });

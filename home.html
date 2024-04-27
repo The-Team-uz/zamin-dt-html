@@ -44,7 +44,8 @@
           <a href="/about.html" class="othera">About Us</a>
         </nav>
         <div class="buttons">
-          <i onclick="favourites()"
+          <i
+            onclick="favourites()"
             class="fa-solid fa-heart likeButton"
             style="color: #f1456e; font-size: 18px"
           ></i>
@@ -120,20 +121,15 @@
           alt=""
           class="card_image"
         />
-        <div>
+        <div class="card_no_image">
           <p class="card_description" onclick="openNewPage()">
             Стиральная машина Samsung WW70AGAS22AELD
           </p>
           <p class="card_price" onclick="openNewPage()">8 000 000 som/sht</p>
           <div class="card_footer">
             <button class="card_button">Add to basket</button>
-            <i
-              class="fa-regular fa-heart heart"
-            ></i>
-            <i
-              class="fa-solid fa-heart fill-heart"
-              style="display: none"
-            ></i>
+            <i class="fa-regular fa-heart heart"></i>
+            <i class="fa-solid fa-heart fill-heart" style="display: none"></i>
           </div>
         </div>
       </div>
@@ -152,20 +148,15 @@
           alt=""
           class="card_image"
         />
-        <div>
+        <div class="card_no_image">
           <p class="card_description" onclick="openNewPage()">
             Стиральная машина Samsung WW70AGAS22AELD
           </p>
           <p class="card_price" onclick="openNewPage()">8 000 000 som/sht</p>
           <div class="card_footer">
             <button class="card_button">Add to basket</button>
-            <i
-              class="fa-regular fa-heart heart"
-            ></i>
-            <i
-              class="fa-solid fa-heart fill-heart"
-              style="display: none"
-            ></i>
+            <i class="fa-regular fa-heart heart"></i>
+            <i class="fa-solid fa-heart fill-heart" style="display: none"></i>
           </div>
         </div>
       </div>
@@ -176,20 +167,15 @@
           alt=""
           class="card_image"
         />
-        <div>
+        <div class="card_no_image">
           <p class="card_description" onclick="openNewPage()">
             Стиральная машина Samsung WW70AGAS22AELD
           </p>
           <p class="card_price" onclick="openNewPage()">8 000 000 som/sht</p>
           <div class="card_footer">
             <button class="card_button">Add to basket</button>
-            <i
-              class="fa-regular fa-heart heart"
-            ></i>
-            <i
-              class="fa-solid fa-heart fill-heart"
-              style="display: none"
-            ></i>
+            <i class="fa-regular fa-heart heart"></i>
+            <i class="fa-solid fa-heart fill-heart" style="display: none"></i>
           </div>
         </div>
       </div>
@@ -334,6 +320,7 @@
     productElement.classList.add("card");
 
     const productElementDiv = document.createElement("div");
+    productElementDiv.classList.add("card_no_image");
 
     const cardImage = document.createElement("img");
     cardImage.classList.add("card_image");
@@ -373,6 +360,7 @@
     productElementDiv.append(cardDesc, cardPrice, cardFooter);
     productElement.append(cardImage, productElementDiv);
     wrapper.appendChild(productElement);
+
     cardDesc.addEventListener("click", () => {
       window.location.href = "single_product.html";
     });
