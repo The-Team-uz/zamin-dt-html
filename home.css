@@ -62,6 +62,10 @@ html {
   transition: opacity 0.3s, visibility 0.3s;
 }
 
+#back-to-top:hover {
+  background-color: #fadb6e;
+}
+
 .loading {
   display: none;
   position: fixed;
@@ -409,7 +413,7 @@ html {
 .title {
   text-align: center;
   margin-bottom: 50px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .title h1 {
   font-size: 42px;
@@ -417,13 +421,13 @@ html {
 }
 .title h4 {
   color: #8390a2;
-  margin-top: 18px;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 500;
 }
 .title .big-heart {
-  font-size: 80px;
+  font-size: 100px;
   color: #dfe2e9;
+  margin-bottom: 20px;
 }
 .title .home_btn {
   margin-top: 45px;

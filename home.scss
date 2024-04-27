@@ -64,6 +64,10 @@ html {
   font-size: 18px;
   transition: opacity 0.3s, visibility 0.3s;
 }
+#back-to-top:hover {
+  background-color: $green_pale;
+}
+
 
 ////  LOADINGGGGGGGGGGG
 .loading {
@@ -425,21 +429,21 @@ html {
 .title {
   text-align: center;
   margin-bottom: 50px;
-  margin-top: 30px;
+  margin-top: 50px;
   h1 {
     font-size: 42px;
     color: $route_gray;
   }
   h4 {
     color: $gray;
-    margin-top: 18px;
-    font-size: 17px;
+    // margin-top: 5px;
+    font-size: 15px;
     font-weight: 500;
   }
   .big-heart {
-    font-size: 80px;
+    font-size: 100px;
     color: $border_color;
-    // margin-bottom: 20px;
+    margin-bottom: 20px;
   }
   .home_btn {
     margin-top: 45px;
