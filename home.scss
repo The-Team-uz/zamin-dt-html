@@ -68,7 +68,6 @@ html {
   background-color: $green_pale;
 }
 
-
 ////  LOADINGGGGGGGGGGG
 .loading {
   display: none;
@@ -1370,6 +1369,15 @@ html {
     }
     .basket_wrapper {
       width: 100%;
+    }
+  }
+  .container {
+    .infos {
+      .third_info {
+        .info_btn {
+          width: 100%;
+        }
+      }
     }
   }
 }
