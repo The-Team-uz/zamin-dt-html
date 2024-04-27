@@ -25,6 +25,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+}
+body .container-wrapper {
+  width: 1300px;
 }
 
 html {
@@ -85,18 +89,26 @@ html {
   height: 200px;
 }
 
+#main {
+  width: 100%;
+}
 #main #first {
+  background-color: #282d30;
+  display: flex;
+  justify-content: center;
+}
+#main #first .first-wrap {
   display: flex;
   justify-content: space-between;
-  background-color: #282d30;
+  padding: 16px;
   color: white;
-  padding: 16px 10%;
   font-size: 12px;
+  width: 1300px;
 }
-#main #first h4 {
+#main #first .first-wrap h4 {
   font-weight: normal;
 }
-#main #first select {
+#main #first .first-wrap select {
   background: inherit;
   color: white;
   border: none;
@@ -104,35 +116,41 @@ html {
   outline: none;
 }
 #main #second {
+  width: 100%;
   display: flex;
-  padding: 16px 10%;
+  justify-content: center;
   background-color: white;
+}
+#main #second .second-wrap {
+  width: 1300px;
+  display: flex;
+  padding: 16px 0 16px 0;
   align-items: center;
   justify-content: space-between;
 }
-#main #second .logo {
+#main #second .second-wrap .logo {
   width: 50px;
 }
-#main #second .links {
+#main #second .second-wrap .links {
   display: flex;
   gap: 25px;
   font-size: 16px;
 }
-#main #second .links a {
+#main #second .second-wrap .links a {
   text-decoration: none;
   position: relative;
 }
-#main #second .links .thisa {
+#main #second .second-wrap .links .thisa {
   color: #48545d;
   border-bottom: 2px solid #f8d24a;
   padding-bottom: 5px;
   font-weight: 500;
 }
-#main #second .links .othera {
+#main #second .second-wrap .links .othera {
   color: #8390a2;
   font-weight: 500;
 }
-#main #second .links .othera::before {
+#main #second .second-wrap .links .othera::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -142,24 +160,24 @@ html {
   background-color: #f8d24a;
   transition: width 0.3s ease;
 }
-#main #second .links .othera:hover::before {
+#main #second .second-wrap .links .othera:hover::before {
   width: 100%;
 }
-#main #second .links .othera:hover {
+#main #second .second-wrap .links .othera:hover {
   color: #49555e;
 }
-#main #second .buttons {
+#main #second .second-wrap .buttons {
   display: flex;
   gap: 10px;
 }
-#main #second .buttons .likeButton {
+#main #second .second-wrap .buttons .likeButton {
   padding: 12px 14px;
   background: white;
   border: 1px solid #dfe2e9;
   border-radius: 5px;
   cursor: pointer;
 }
-#main #second .buttons .basket {
+#main #second .second-wrap .buttons .basket {
   padding: 12px 14px;
   background: white;
   border: 1px solid #dfe2e9;
@@ -168,7 +186,7 @@ html {
   border-radius: 5px;
   cursor: pointer;
 }
-#main #second .buttons .loginbtn {
+#main #second .second-wrap .buttons .loginbtn {
   padding: 12px 20px;
   background: #f8d24a;
   border: none;
@@ -176,12 +194,12 @@ html {
   font-size: 16px;
   border-radius: 5px;
 }
-#main #second .buttons .loginbtn:hover {
+#main #second .second-wrap .buttons .loginbtn:hover {
   background-color: #fadb6e;
   transition: all ease-in-out 0.2s;
   cursor: pointer;
 }
-#main #second .buttons .fa-circle-user {
+#main #second .second-wrap .buttons .fa-circle-user {
   background-color: #f8d24a;
   color: #000;
   font-size: 25px;
@@ -189,10 +207,10 @@ html {
   border-radius: 5px;
   display: none;
 }
-#main #second .buttons .fa-bars {
+#main #second .second-wrap .buttons .fa-bars {
   display: none;
 }
-#main #second .buttons .ham {
+#main #second .second-wrap .buttons .ham {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: transform 400ms;
@@ -200,29 +218,29 @@ html {
   -webkit-user-select: none;
   user-select: none;
 }
-#main #second .buttons .hamRotate.active {
+#main #second .second-wrap .buttons .hamRotate.active {
   transform: rotate(45deg);
 }
-#main #second .buttons .hamRotate180.active {
+#main #second .second-wrap .buttons .hamRotate180.active {
   transform: rotate(180deg);
 }
-#main #second .buttons .line {
+#main #second .second-wrap .buttons .line {
   fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
   stroke: #000;
   stroke-width: 5.5;
   stroke-linecap: round;
 }
-#main #second .buttons .ham1 .top {
+#main #second .second-wrap .buttons .ham1 .top {
   stroke-dasharray: 40 139;
 }
-#main #second .buttons .ham1 .bottom {
+#main #second .second-wrap .buttons .ham1 .bottom {
   stroke-dasharray: 40 180;
 }
-#main #second .buttons .ham1.active .top {
+#main #second .second-wrap .buttons .ham1.active .top {
   stroke-dashoffset: -98px;
 }
-#main #second .buttons .ham1.active .bottom {
+#main #second .second-wrap .buttons .ham1.active .bottom {
   stroke-dashoffset: -138px;
 }
 #main .hiding_menu {
@@ -270,23 +288,30 @@ html {
   border-bottom: 1px solid #dfe2e9;
 }
 #main #third {
-  padding: 16px 10%;
-  border-bottom: 0.5px solid #dfe2e9;
+  width: 100%;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  border-bottom: 0.5px solid #dfe2e9;
 }
-#main #third h1 {
+#main #third .third-wrap {
+  width: 1300px;
+  display: flex;
+  padding: 16px 0 16px 0;
+}
+#main #third .third-wrap h1 {
   display: flex;
   gap: 5px;
   font-size: 12px;
 }
-#main #third .home {
+#main #third .third-wrap .home {
   text-decoration: none;
   color: #bebfc9;
 }
-#main #third .home:hover {
+#main #third .third-wrap .home:hover {
   color: #48545d;
 }
-#main #third .allproducts {
+#main #third .third-wrap .allproducts {
   text-decoration: none;
   color: #48545d;
 }
@@ -298,9 +323,6 @@ html {
   color: black;
 }
 
-.carusel {
-  padding: 0 10% 0 10%;
-}
 .carusel .swiper {
   border-radius: 1rem;
   height: 600px;
@@ -321,10 +343,11 @@ html {
   height: 100%;
   background-size: cover;
   background-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .wrapper {
-  padding: 0 10%;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
@@ -350,6 +373,8 @@ html {
 .wrapper .card_image {
   width: 100%;
   height: 65%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .wrapper .card_button {
   background-color: #f8d24a;
@@ -414,7 +439,7 @@ html {
 .title {
   text-align: center;
   margin-bottom: 50px;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 .title h1 {
   font-size: 42px;
@@ -449,7 +474,6 @@ html {
 }
 
 .about_wrapper {
-  padding: 0 10%;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -564,7 +588,6 @@ html {
 }
 
 .single_product {
-  padding: 0 10%;
   margin-top: 20px;
   margin-bottom: 10px;
   display: flex;
@@ -619,11 +642,13 @@ html {
   flex-direction: column;
   gap: 30px;
 }
-.single_product .product_wrapper .description_wrapper .desc span {
-  font-size: 14px;
-}
 .single_product .product_wrapper .description_wrapper .desc h5 {
   font-size: 14px;
+  color: #48545d;
+}
+.single_product .product_wrapper .description_wrapper .desc h5 span {
+  font-size: 14px;
+  font-weight: 400;
   color: #48545d;
 }
 .single_product .product_wrapper .description_wrapper span {
@@ -786,7 +811,7 @@ html {
 }
 
 .container {
-  margin: 50px 10%;
+  margin: 50px 16px;
   padding: 20px;
   border: 1px solid #dfe2e9;
   border-radius: 1rem;
@@ -798,6 +823,8 @@ html {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .container .image #hidden_btns {
   display: none;
@@ -807,6 +834,8 @@ html {
   border: 1px solid #dfe2e9;
   width: 120px;
   height: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .container h5 {
   color: #8390a2;
@@ -968,32 +997,39 @@ html {
 }
 
 #footer {
+  width: 100%;
   margin-top: 100px;
   border-top: 1px solid #dfe2e9;
+  background-color: white;
 }
 #footer #first {
   display: flex;
-  padding: 2% 10%;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid #dfe2e9;
 }
-#footer #first .f-div {
+#footer #first .first-wrap {
+  width: 1300px;
+  display: flex;
+  padding: 0.5% 0;
+  justify-content: space-between;
+  align-items: center;
+}
+#footer #first .first-wrap .f-div {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-#footer #first .f-div h2 {
+#footer #first .first-wrap .f-div h2 {
   font-size: 14px;
   color: #8390a2;
   font-weight: normal;
 }
-#footer #first .f-div h1 {
+#footer #first .first-wrap .f-div h1 {
   font-size: 16px;
   font-weight: 500;
   color: #48545d;
 }
-#footer #first .f-div h1:hover {
+#footer #first .first-wrap .f-div h1:hover {
   color: #f8d24a;
   cursor: pointer;
   transition: all ease-in-out 0.2s;
@@ -1058,10 +1094,24 @@ html {
 @media screen and (max-width: 1300px) {
   .single_product {
     flex-direction: column;
-    padding: 5%;
   }
   .wrapper .card {
     width: 32%;
+  }
+  body .container-wrapper {
+    width: 95%;
+  }
+  #main #first .first-wrap {
+    width: 90%;
+  }
+  #main #second .second-wrap {
+    width: 90%;
+  }
+  #main #third .third-wrap {
+    width: 90%;
+  }
+  #footer #first .first-wrap {
+    width: 90%;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -1073,34 +1123,31 @@ html {
   }
 }
 @media screen and (max-width: 1024px) {
-  #main #first {
-    padding: 16px 20px;
-  }
-  #main #second {
+  #main #second .second-wrap {
     padding: 20px;
   }
-  #main #second .links {
+  #main #second .second-wrap .links {
     display: none;
   }
-  #main #second .buttons {
+  #main #second .second-wrap .buttons {
     display: flex;
     align-items: center;
   }
-  #main #second .buttons .loginbtn {
+  #main #second .second-wrap .buttons .loginbtn {
     display: none;
   }
-  #main #second .buttons .fa-circle-user {
+  #main #second .second-wrap .buttons .fa-circle-user {
     display: block;
   }
-  #main #second .buttons .fa-bars {
+  #main #second .second-wrap .buttons .fa-bars {
     display: flex;
   }
-  #main #second .buttons .fa-bars:hover {
+  #main #second .second-wrap .buttons .fa-bars:hover {
     color: #8390a2;
     cursor: pointer;
     transition: all ease-in-out 0.2s;
   }
-  #footer #first {
+  #footer #first .first-wrap {
     padding: 20px;
     flex-wrap: wrap;
     gap: 50px;
@@ -1127,9 +1174,6 @@ html {
   }
   .about_wrapper .requisites .req_second .req_second_wrap {
     gap: 20px;
-  }
-  .single_product {
-    padding: 20px;
   }
   .container {
     margin: 30px;
@@ -1180,22 +1224,22 @@ html {
   }
 }
 @media screen and (max-width: 640px) {
-  #main #second {
+  #main #second .second-wrap {
     padding: 5px 20px;
   }
-  #main #second .logo {
+  #main #second .second-wrap .logo {
     width: 40px;
   }
-  #main #second .buttons .likeButton {
+  #main #second .second-wrap .buttons .likeButton {
     padding: 6px;
   }
-  #main #second .buttons .basket {
+  #main #second .second-wrap .buttons .basket {
     padding: 6px;
   }
-  #main #second .buttons .basket span {
+  #main #second .second-wrap .buttons .basket span {
     display: none;
   }
-  #main #second .buttons .fa-circle-user {
+  #main #second .second-wrap .buttons .fa-circle-user {
     padding: 6px;
     font-size: 16px;
     font-weight: 300;
@@ -1216,6 +1260,8 @@ html {
   .wrapper .card_image {
     width: 264px;
     height: 282px;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .req_second {
     flex-direction: column;
@@ -1250,13 +1296,13 @@ html {
   #footer {
     padding-bottom: 50px;
   }
-  #footer #first {
+  #footer #first .first-wrap {
     flex-direction: column;
     gap: 8px;
     align-items: start;
   }
-  #footer #first .f-div h2,
-  #footer #first .f-div h1 {
+  #footer #first .first-wrap .f-div h2,
+  #footer #first .first-wrap .f-div h1 {
     font-size: 12px;
   }
   #footer #second {
@@ -1278,7 +1324,7 @@ html {
     border-radius: 10px;
   }
   .title {
-    margin-top: 15px;
+    margin-top: 30px;
     margin-bottom: 10px;
   }
   .title h1 {

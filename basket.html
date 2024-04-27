@@ -16,54 +16,58 @@
     <div id="main">
       <!-- First -->
       <div id="first">
-        <h4>Call center:</h4>
-        <select name="Language" id="lang">
-          <option value="uzb">O'zbek</option>
-          <option value="eng" selected>English</option>
-          <option value="rus">Русский</option>
-        </select>
+        <div class="first-wrap">
+          <h4>Call center:</h4>
+          <select name="Language" id="lang">
+            <option value="uzb">O'zbek</option>
+            <option value="eng" selected>English</option>
+            <option value="rus">Русский</option>
+          </select>
+        </div>
       </div>
 
       <!-- Second -->
       <div id="second">
-        <img src="./public/dt.png" alt="Logo" class="logo" />
-        <!-- Big navbar -->
-        <nav class="links">
-          <a href="/home.html" class="othera">Home</a>
-          <a href="/products.html" class="othera">All products</a>
-          <a href="/videos.html" class="othera">Video reviews</a>
-          <a href="/about.html" class="othera">About Us</a>
-        </nav>
-        <div class="buttons">
-          <button type="button" class="likeButton" onclick="favourites()">
-            <i
-              class="fa-solid fa-heart"
-              style="color: #f1456e; font-size: 18px"
-            ></i>
-          </button>
-          <button type="button" class="basket" onclick="basket()">
-            <i class="fa-solid fa-cart-shopping" style="margin-right: 5px"></i
-            >Basket
-          </button>
-          <button type="button" class="loginbtn">Login</button>
-          <i class="fa-regular fa-circle-user"></i>
-          <svg
-            id="bar"
-            class="ham hamRotate ham1 fa-bars"
-            viewBox="0 0 100 100"
-            width="40"
-            onclick="this.classList.toggle('active')"
-          >
-            <path
-              class="line top"
-              d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
-            />
-            <path class="line middle" d="m 30,50 h 40" />
-            <path
-              class="line bottom"
-              d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
-            />
-          </svg>
+        <div class="second-wrap">
+          <img src="./public/dt.png" alt="Logo" class="logo" />
+          <!-- Big navbar -->
+          <nav class="links">
+            <a href="/home.html" class="othera">Home</a>
+            <a href="/products.html" class="othera">All products</a>
+            <a href="/videos.html" class="othera">Video reviews</a>
+            <a href="/about.html" class="othera">About Us</a>
+          </nav>
+          <div class="buttons">
+            <button type="button" class="likeButton" onclick="favourites()">
+              <i
+                class="fa-solid fa-heart"
+                style="color: #f1456e; font-size: 18px"
+              ></i>
+            </button>
+            <button type="button" class="basket" onclick="basket()">
+              <i class="fa-solid fa-cart-shopping" style="margin-right: 5px"></i
+              >Basket
+            </button>
+            <button type="button" class="loginbtn">Login</button>
+            <i class="fa-regular fa-circle-user"></i>
+            <svg
+              id="bar"
+              class="ham hamRotate ham1 fa-bars"
+              viewBox="0 0 100 100"
+              width="40"
+              onclick="this.classList.toggle('active')"
+            >
+              <path
+                class="line top"
+                d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
+              />
+              <path class="line middle" d="m 30,50 h 40" />
+              <path
+                class="line bottom"
+                d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
+              />
+            </svg>
+          </div>
         </div>
       </div>
 
@@ -90,83 +94,93 @@
           <a><i class="fa-solid fa-cart-shopping thisa"></i>Basket</a>
         </div>
       </div>
+
       <div id="third">
-        <h1>
-          <a href="/home.html" class="home">Home</a> |
-          <a href="/basket.html" class="allproducts">Basket</a>
-        </h1>
+        <div class="third-wrap">
+          <h1>
+            <a href="/home.html" class="home">Home</a> |
+            <a href="/basket.html" class="allproducts">Basket</a>
+          </h1>
+        </div>
       </div>
     </div>
 
-    <!-- Basketttttttttttttttttttttttttttttttt-->
-    <div class="title first" style="display: none">
-      <i class="fa-solid fa-cart-shopping big-heart"></i>
-      <h1>The basket list is empty</h1>
-      <h4>
-        Add products you like to your basket list so you can watch them later or
-        make a purchase
-      </h4>
-      <button class="home_btn" onclick="home()">Home</button>
-    </div>
+    <div class="container-wrapper">
+      <!-- Basketttttttttttttttttttttttttttttttt-->
+      <div class="title first" style="display: none">
+        <i class="fa-solid fa-cart-shopping big-heart"></i>
+        <h1>The basket list is empty</h1>
+        <h4>
+          Add products you like to your basket list so you can watch them later
+          or make a purchase
+        </h4>
+        <button class="home_btn" onclick="home()">Home</button>
+      </div>
 
-    <div class="container">
-      <div class="image">
-        <img
-          src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
-          alt="Img"
-        />
-        <div id="hidden_btns" class="basket_btns">
+      <div class="container">
+        <div class="image">
+          <img
+            src="https://resource.dthub.uz/api/file/view-image/uX3vrpNL-Oo9ezjrxy1A-zvsAvpI8zsZeZWT9R9T2uP7CAEoAnMJGc3zWn-kZHd1tv9a-P50oUyPHowdYlJUgqcbiHHQH725DzR7o1yl0LKpnr-DSux3gfj5XMc9FgU6"
+            alt="Img"
+          />
+          <div id="hidden_btns" class="basket_btns">
+            <i class="fa-regular fa-heart heart"></i>
+            <i class="fa-solid fa-heart fill-heart" style="display: none"></i>
+
+            <i class="fa-solid fa-rectangle-xmark" onclick="closeBasket()"></i>
+          </div>
+        </div>
+        <div class="infos">
+          <div class="first_info">
+            <h4>Стиральная машина Samsung WW70AGAS22AELD</h4>
+            <h5>
+              <span>Price:</span> &nbsp; &nbsp; &nbsp; &nbsp; 7 100 000 som/pCS
+            </h5>
+          </div>
+          <div class="hr"></div>
+          <div class="second_info">
+            <div class="left">
+              <h5>Quantity</h5>
+              <div class="counter">
+                <div class="minus"><i class="fa-solid fa-minus"></i></div>
+                <div class="number">1</div>
+                <div class="plus"><i class="fa-solid fa-plus"></i></div>
+              </div>
+              <h5>Offer a quote</h5>
+              <input
+                type="number"
+                value="7100000"
+                id="offering"
+                max="143000000"
+              />
+            </div>
+            <textarea
+              name=""
+              class="right"
+              id=""
+              cols="10"
+              rows="8"
+              placeholder="Commentary"
+            ></textarea>
+          </div>
+          <div class="hr"></div>
+          <div class="third_info">
+            <div class="total">
+              <h5>Total:</h5>
+              <h4 class="t_price">7 100 000 <span>som</span></h4>
+            </div>
+            <div class="offer_price">
+              <h5>Offer a quote:</h5>
+              <h4 id="offering_price">7 100 000 <span>som</span></h4>
+            </div>
+            <button class="info_btn">Send request</button>
+          </div>
+        </div>
+        <div id="basket_btns" class="basket_btns">
           <i class="fa-regular fa-heart heart"></i>
           <i class="fa-solid fa-heart fill-heart" style="display: none"></i>
-
           <i class="fa-solid fa-rectangle-xmark" onclick="closeBasket()"></i>
         </div>
-      </div>
-      <div class="infos">
-        <div class="first_info">
-          <h4>Стиральная машина Samsung WW70AGAS22AELD</h4>
-          <h5>
-            <span>Price:</span> &nbsp; &nbsp; &nbsp; &nbsp; 7 100 000 som/pCS
-          </h5>
-        </div>
-        <div class="hr"></div>
-        <div class="second_info">
-          <div class="left">
-            <h5>Quantity</h5>
-            <div class="counter">
-              <div class="minus"><i class="fa-solid fa-minus"></i></div>
-              <div class="number">1</div>
-              <div class="plus"><i class="fa-solid fa-plus"></i></div>
-            </div>
-            <h5>Offer a quote</h5>
-            <input type="number" value="7100000" id="offering" max="143000000" />
-          </div>
-          <textarea
-            name=""
-            class="right"
-            id=""
-            cols="10"
-            rows="8"
-            placeholder="Commentary"
-          ></textarea>
-        </div>
-        <div class="hr"></div>
-        <div class="third_info">
-          <div class="total">
-            <h5>Total:</h5>
-            <h4 class="t_price">7 100 000 <span>som</span></h4>
-          </div>
-          <div class="offer_price">
-            <h5>Offer a quote:</h5>
-            <h4 id="offering_price">7 100 000 <span>som</span></h4>
-          </div>
-          <button class="info_btn">Send request</button>
-        </div>
-      </div>
-      <div id="basket_btns" class="basket_btns">
-        <i class="fa-regular fa-heart heart"></i>
-        <i class="fa-solid fa-heart fill-heart" style="display: none"></i>
-        <i class="fa-solid fa-rectangle-xmark" onclick="closeBasket()"></i>
       </div>
     </div>
 
@@ -174,37 +188,39 @@
     <div id="footer">
       <!-- First -->
       <div id="first">
-        <img
-          src="/public/dt.png"
-          alt="Logo"
-          style="width: 100px; height: 60px"
-        />
+        <div class="first-wrap">
+          <img
+            src="/public/dt.png"
+            alt="Logo"
+            style="width: 100px; height: 60px"
+          />
 
-        <!-- Address -->
-        <div class="f-div">
-          <h2>Address</h2>
-          <h1>Samarqand shahar</h1>
-        </div>
+          <!-- Address -->
+          <div class="f-div">
+            <h2>Address</h2>
+            <h1>Samarqand shahar</h1>
+          </div>
 
-        <!-- Phone -->
-        <div class="f-div">
-          <h2>Phone</h2>
-          <h1>+998902567890</h1>
-        </div>
+          <!-- Phone -->
+          <div class="f-div">
+            <h2>Phone</h2>
+            <h1>+998902567890</h1>
+          </div>
 
-        <!-- Email -->
-        <div class="f-div">
-          <h2>Email</h2>
-          <h1>dtpos.info@gmail.com</h1>
-        </div>
+          <!-- Email -->
+          <div class="f-div">
+            <h2>Email</h2>
+            <h1>dtpos.info@gmail.com</h1>
+          </div>
 
-        <!-- Socials -->
-        <div class="f-div">
-          <h2>Socials</h2>
-          <div class="socials">
-            <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-telegram"></i>
+          <!-- Socials -->
+          <div class="f-div">
+            <h2>Socials</h2>
+            <div class="socials">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-telegram"></i>
+            </div>
           </div>
         </div>
       </div>

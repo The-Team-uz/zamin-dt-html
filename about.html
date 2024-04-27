@@ -16,54 +16,58 @@
     <div id="main">
       <!-- First -->
       <div id="first">
-        <h4>Call center:</h4>
-        <select name="Language" id="lang">
-          <option value="uzb">O'zbek</option>
-          <option value="eng" selected>English</option>
-          <option value="rus">Русский</option>
-        </select>
+        <div class="first-wrap">
+          <h4>Call center:</h4>
+          <select name="Language" id="lang">
+            <option value="uzb">O'zbek</option>
+            <option value="eng" selected>English</option>
+            <option value="rus">Русский</option>
+          </select>
+        </div>
       </div>
 
       <!-- Second -->
       <div id="second">
-        <img src="./public/dt.png" alt="Logo" class="logo" />
-        <!-- Big navbar -->
-        <nav class="links">
-          <a href="/home.html" class="othera">Home</a>
-          <a href="/products.html" class="othera">All products</a>
-          <a href="/videos.html" class="othera">Video reviews</a>
-          <a href="/about.html" class="thisa">About Us</a>
-        </nav>
-        <div class="buttons">
-          <button type="button" class="likeButton" onclick="favourites()">
-            <i
-              class="fa-solid fa-heart"
-              style="color: #f1456e; font-size: 18px"
-            ></i>
-          </button>
-          <button type="button" class="basket" onclick="basket()">
-            <i class="fa-solid fa-cart-shopping" style="margin-right: 5px"></i
-            >Basket
-          </button>
-          <button type="button" class="loginbtn">Login</button>
-          <i class="fa-regular fa-circle-user"></i>
-          <svg
-            id="bar"
-            class="ham hamRotate ham1 fa-bars"
-            viewBox="0 0 100 100"
-            width="40"
-            onclick="this.classList.toggle('active')"
-          >
-            <path
-              class="line top"
-              d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
-            />
-            <path class="line middle" d="m 30,50 h 40" />
-            <path
-              class="line bottom"
-              d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
-            />
-          </svg>
+        <div class="second-wrap">
+          <img src="./public/dt.png" alt="Logo" class="logo" />
+          <!-- Big navbar -->
+          <nav class="links">
+            <a href="/home.html" class="othera">Home</a>
+            <a href="/products.html" class="othera">All products</a>
+            <a href="/videos.html" class="othera">Video reviews</a>
+            <a href="/about.html" class="thisa">About Us</a>
+          </nav>
+          <div class="buttons">
+            <button type="button" class="likeButton" onclick="favourites()">
+              <i
+                class="fa-solid fa-heart"
+                style="color: #f1456e; font-size: 18px"
+              ></i>
+            </button>
+            <button type="button" class="basket" onclick="basket()">
+              <i class="fa-solid fa-cart-shopping" style="margin-right: 5px"></i
+              >Basket
+            </button>
+            <button type="button" class="loginbtn">Login</button>
+            <i class="fa-regular fa-circle-user"></i>
+            <svg
+              id="bar"
+              class="ham hamRotate ham1 fa-bars"
+              viewBox="0 0 100 100"
+              width="40"
+              onclick="this.classList.toggle('active')"
+            >
+              <path
+                class="line top"
+                d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
+              />
+              <path class="line middle" d="m 30,50 h 40" />
+              <path
+                class="line bottom"
+                d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
+              />
+            </svg>
+          </div>
         </div>
       </div>
 
@@ -92,160 +96,165 @@
       </div>
 
       <div id="third">
-        <h1>
-          <a href="/home.html" class="home">Home</a> |
-          <a href="/about.html" class="allproducts">About Us</a>
-        </h1>
+        <div class="third-wrap">
+          <h1>
+            <a href="/home.html" class="home">Home</a> |
+            <a href="/about.html" class="allproducts">About Us</a>
+          </h1>
+        </div>
       </div>
     </div>
-
-    <div class="title">
-      <h1>About Us</h1>
-      <h4>Details and contacts</h4>
-    </div>
-    <div class="about_wrapper">
-      <div class="requisites">
-        <div class="first">
-          <h2>Requisites</h2>
-        </div>
-        <div class="req_second">
-          <div class="req_logo">
-            <img src="./public/dt.png" class="logo" />
+    <div class="container-wrapper">
+      <div class="title">
+        <h1>About Us</h1>
+        <h4>Details and contacts</h4>
+      </div>
+      <div class="about_wrapper">
+        <div class="requisites">
+          <div class="first">
+            <h2>Requisites</h2>
           </div>
-          <div class="req_second_wrap">
-            <div class="req_second_item">
-              <div class="element">
-                <h4>Name</h4>
-                <h3>MA'MUR FAZO NUR MCHJ</h3>
+          <div class="req_second">
+            <div class="req_logo">
+              <img src="./public/dt.png" class="logo" />
+            </div>
+            <div class="req_second_wrap">
+              <div class="req_second_item">
+                <div class="element">
+                  <h4>Name</h4>
+                  <h3>MA'MUR FAZO NUR MCHJ</h3>
+                </div>
+                <div class="element">
+                  <h4>Phone</h4>
+                  <h3>998902567890</h3>
+                </div>
               </div>
-              <div class="element">
-                <h4>Phone</h4>
-                <h3>998902567890</h3>
+              <div class="req_second_item">
+                <div class="element">
+                  <h4>TIN</h4>
+                  <h3>306074085</h3>
+                </div>
+                <div class="element">
+                  <h4>OKED</h4>
+                  <h3>21312</h3>
+                </div>
+              </div>
+              <div class="req_second_item">
+                <div class="element">
+                  <h4>Address</h4>
+                  <h3>Samarqand shahar</h3>
+                </div>
+                <div class="element">
+                  <h4>Email</h4>
+                  <h3>dtpos.info@gmail.com</h3>
+                </div>
               </div>
             </div>
-            <div class="req_second_item">
-              <div class="element">
-                <h4>TIN</h4>
-                <h3>306074085</h3>
-              </div>
-              <div class="element">
-                <h4>OKED</h4>
-                <h3>21312</h3>
-              </div>
-            </div>
-            <div class="req_second_item">
+          </div>
+          <div class="req_third">
+            <p>
+              "Добро пожаловать в мир современных технологий и инноваций с нашей
+              компанией! Мы поможем вам оставаться в курсе последних тенденций и
+              выбрать самые продвинутые и надежные гаджеты. Наша компания
+              специализируется на продаже электроники, предлагая широчайший
+              ассортимент от ведущих производителей мира.
+            </p>
+            <p>
+              С самого начала наше основное тезис - качество. Мы тщательно
+              отбираем товары, предлагая клиентам только лучшую электронику,
+              доказавшую свою надежность и эффективность. Наша команда
+              профессионалов всегда готова предоставить помощь в выборе,
+              ответить на все ваши вопросы и обеспечить превосходный сервис
+              после продажи.
+            </p>
+            <p>
+              В настоящее время технологии и электроника становятся важной
+              частью нашей повседневной жизни, и мы стремимся обеспечить вас
+              самыми необходимыми и современными устройствами, которые могут
+              улучшить вашу жизнь, обеспечить удобство и сделать ваши дни проще.
+              Мы вдохновляемся новыми достижениями и улучшениями в мире
+              технологий и стремимся делиться этим вдохновением с вами. Добро
+              пожаловать в будущее вместе с нами!"
+            </p>
+          </div>
+        </div>
+        <div class="about">
+          <div class="first_about">
+            <h2>About Us</h2>
+          </div>
+          <div class="second">
+            <div class="second_item">
               <div class="element">
                 <h4>Address</h4>
                 <h3>Samarqand shahar</h3>
               </div>
               <div class="element">
+                <h4>Phone</h4>
+                <h3>+998902567890</h3>
+              </div>
+              <div class="element">
                 <h4>Email</h4>
                 <h3>dtpos.info@gmail.com</h3>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="req_third">
-          <p>
-            "Добро пожаловать в мир современных технологий и инноваций с нашей
-            компанией! Мы поможем вам оставаться в курсе последних тенденций и
-            выбрать самые продвинутые и надежные гаджеты. Наша компания
-            специализируется на продаже электроники, предлагая широчайший
-            ассортимент от ведущих производителей мира.
-          </p>
-          <p>
-            С самого начала наше основное тезис - качество. Мы тщательно
-            отбираем товары, предлагая клиентам только лучшую электронику,
-            доказавшую свою надежность и эффективность. Наша команда
-            профессионалов всегда готова предоставить помощь в выборе, ответить
-            на все ваши вопросы и обеспечить превосходный сервис после продажи.
-          </p>
-          <p>
-            В настоящее время технологии и электроника становятся важной частью
-            нашей повседневной жизни, и мы стремимся обеспечить вас самыми
-            необходимыми и современными устройствами, которые могут улучшить
-            вашу жизнь, обеспечить удобство и сделать ваши дни проще. Мы
-            вдохновляемся новыми достижениями и улучшениями в мире технологий и
-            стремимся делиться этим вдохновением с вами. Добро пожаловать в
-            будущее вместе с нами!"
-          </p>
-        </div>
-      </div>
-      <div class="about">
-        <div class="first_about">
-          <h2>About Us</h2>
-        </div>
-        <div class="second">
-          <div class="second_item">
-            <div class="element">
-              <h4>Address</h4>
-              <h3>Samarqand shahar</h3>
-            </div>
-            <div class="element">
-              <h4>Phone</h4>
-              <h3>+998902567890</h3>
-            </div>
-            <div class="element">
-              <h4>Email</h4>
-              <h3>dtpos.info@gmail.com</h3>
-            </div>
-            <div class="element">
-              <h4>Socials</h4>
-              <div class="socials">
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-telegram"></i>
+              <div class="element">
+                <h4>Socials</h4>
+                <div class="socials">
+                  <i class="fa-brands fa-facebook-f"></i>
+                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-telegram"></i>
+                </div>
               </div>
             </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20716.12828351438!2d69.30925893113913!3d41.31540582197421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1713935314981!5m2!1sru!2s"
+              width="560"
+              height="380"
+              style="border: 0; border-radius: 1rem"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20716.12828351438!2d69.30925893113913!3d41.31540582197421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1713935314981!5m2!1sru!2s"
-            width="560"
-            height="380"
-            style="border: 0; border-radius: 1rem"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
         </div>
       </div>
     </div>
-
     <!-- FOOOOOOOOOOTEERRRRRRRRRRRRRRRRRRRR -->
     <div id="footer">
       <!-- First -->
       <div id="first">
-        <img
-          src="/public/dt.png"
-          alt="Logo"
-          style="width: 100px; height: 60px"
-        />
+        <div class="first-wrap">
+          <img
+            src="/public/dt.png"
+            alt="Logo"
+            style="width: 100px; height: 60px"
+          />
 
-        <!-- Address -->
-        <div class="f-div">
-          <h2>Address</h2>
-          <h1>Samarqand shahar</h1>
-        </div>
+          <!-- Address -->
+          <div class="f-div">
+            <h2>Address</h2>
+            <h1>Samarqand shahar</h1>
+          </div>
 
-        <!-- Phone -->
-        <div class="f-div">
-          <h2>Phone</h2>
-          <h1>+998902567890</h1>
-        </div>
+          <!-- Phone -->
+          <div class="f-div">
+            <h2>Phone</h2>
+            <h1>+998902567890</h1>
+          </div>
 
-        <!-- Email -->
-        <div class="f-div">
-          <h2>Email</h2>
-          <h1>dtpos.info@gmail.com</h1>
-        </div>
+          <!-- Email -->
+          <div class="f-div">
+            <h2>Email</h2>
+            <h1>dtpos.info@gmail.com</h1>
+          </div>
 
-        <!-- Socials -->
-        <div class="f-div">
-          <h2>Socials</h2>
-          <div class="socials">
-            <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-telegram"></i>
+          <!-- Socials -->
+          <div class="f-div">
+            <h2>Socials</h2>
+            <div class="socials">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-telegram"></i>
+            </div>
           </div>
         </div>
       </div>
@@ -255,6 +264,7 @@
         <h1>© 2023-2024 — OOO «MA'MUR FAZO NUR MCHJ». All rights reserved.</h1>
       </div>
     </div>
+
     <a id="back-to-top" href="#top"><i class="fa-solid fa-chevron-up"></i></a>
     <!-- LOADING -->
     <div class="loading" id="loading">

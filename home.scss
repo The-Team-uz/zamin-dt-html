@@ -17,6 +17,7 @@ $route_gray: #48545d;
   background-color: $green_pale;
   color: #fff;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   font-weight: 100;
@@ -27,10 +28,16 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  .container-wrapper {
+    width: 1300px;
+  }
 }
 
 html {
   scroll-behavior: smooth;
+  // display: flex;
+  // justify-content: center;
 }
 
 .fixed {
@@ -90,148 +97,161 @@ html {
 
 // HEADER
 #main {
+  width: 100%;
+
   #first {
-    display: flex;
-    justify-content: space-between;
     background-color: $header_background;
-    color: $white;
-    padding: 16px 10%;
-    font-size: 12px;
-    h4 {
-      font-weight: normal;
-    }
-    select {
-      background: inherit;
-      color: $white;
-      border: none;
+    display: flex;
+    justify-content: center;
+    .first-wrap {
       display: flex;
-      outline: none;
+      justify-content: space-between;
+      padding: 16px;
+      color: $white;
+      font-size: 12px;
+      width: 1300px;
+      h4 {
+        font-weight: normal;
+      }
+      select {
+        background: inherit;
+        color: $white;
+        border: none;
+        display: flex;
+        outline: none;
+      }
     }
   }
 
   #second {
+    width: 100%;
     display: flex;
-    padding: 16px 10%;
+    justify-content: center;
     background-color: $white;
-    align-items: center;
-    justify-content: space-between;
-    .logo {
-      width: 50px;
-    }
-    .links {
+    .second-wrap {
+      width: 1300px;
       display: flex;
-      gap: 25px;
-      font-size: 16px;
-      a {
-        text-decoration: none;
-        position: relative;
+      padding: 16px 0 16px 0;
+      align-items: center;
+      justify-content: space-between;
+      .logo {
+        width: 50px;
       }
-      .thisa {
-        color: $route_gray;
-        border-bottom: 2px solid $green;
-        padding-bottom: 5px;
-        font-weight: 500;
-      }
-      .othera {
-        color: $gray;
-        font-weight: 500;
-      }
-      .othera::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: $green;
-        transition: width 0.3s ease;
-      }
-
-      .othera:hover::before {
-        width: 100%;
-      }
-
-      .othera:hover {
-        color: #49555e;
-      }
-    }
-    .buttons {
-      display: flex;
-      gap: 10px;
-
-      .likeButton {
-        padding: 12px 14px;
-        background: $white;
-        border: 1px solid $border_color;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .basket {
-        padding: 12px 14px;
-        background: $white;
-        border: 1px solid $border_color;
-        color: $gray;
+      .links {
+        display: flex;
+        gap: 25px;
         font-size: 16px;
-        border-radius: 5px;
-        cursor: pointer;
+        a {
+          text-decoration: none;
+          position: relative;
+        }
+        .thisa {
+          color: $route_gray;
+          border-bottom: 2px solid $green;
+          padding-bottom: 5px;
+          font-weight: 500;
+        }
+        .othera {
+          color: $gray;
+          font-weight: 500;
+        }
+        .othera::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: $green;
+          transition: width 0.3s ease;
+        }
+
+        .othera:hover::before {
+          width: 100%;
+        }
+
+        .othera:hover {
+          color: #49555e;
+        }
       }
-      .loginbtn {
-        padding: 12px 20px;
-        background: $green;
-        border: none;
-        color: #000;
-        font-size: 16px;
-        border-radius: 5px;
-      }
-      .loginbtn:hover {
-        background-color: $green_pale;
-        transition: all ease-in-out 0.2s;
-        cursor: pointer;
-      }
-      .fa-circle-user {
-        background-color: $green;
-        color: #000;
-        font-size: 25px;
-        padding: 10px;
-        border-radius: 5px;
-        display: none;
-      }
-      .fa-bars {
-        display: none;
-      }
-      .ham {
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-        transition: transform 400ms;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      .hamRotate.active {
-        transform: rotate(45deg);
-      }
-      .hamRotate180.active {
-        transform: rotate(180deg);
-      }
-      .line {
-        fill: none;
-        transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-        stroke: #000;
-        stroke-width: 5.5;
-        stroke-linecap: round;
-      }
-      .ham1 .top {
-        stroke-dasharray: 40 139;
-      }
-      .ham1 .bottom {
-        stroke-dasharray: 40 180;
-      }
-      .ham1.active .top {
-        stroke-dashoffset: -98px;
-      }
-      .ham1.active .bottom {
-        stroke-dashoffset: -138px;
+      .buttons {
+        display: flex;
+        gap: 10px;
+
+        .likeButton {
+          padding: 12px 14px;
+          background: $white;
+          border: 1px solid $border_color;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        .basket {
+          padding: 12px 14px;
+          background: $white;
+          border: 1px solid $border_color;
+          color: $gray;
+          font-size: 16px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        .loginbtn {
+          padding: 12px 20px;
+          background: $green;
+          border: none;
+          color: #000;
+          font-size: 16px;
+          border-radius: 5px;
+        }
+        .loginbtn:hover {
+          background-color: $green_pale;
+          transition: all ease-in-out 0.2s;
+          cursor: pointer;
+        }
+        .fa-circle-user {
+          background-color: $green;
+          color: #000;
+          font-size: 25px;
+          padding: 10px;
+          border-radius: 5px;
+          display: none;
+        }
+        .fa-bars {
+          display: none;
+        }
+        .ham {
+          cursor: pointer;
+          -webkit-tap-highlight-color: transparent;
+          transition: transform 400ms;
+          -moz-user-select: none;
+          -webkit-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+        .hamRotate.active {
+          transform: rotate(45deg);
+        }
+        .hamRotate180.active {
+          transform: rotate(180deg);
+        }
+        .line {
+          fill: none;
+          transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+          stroke: #000;
+          stroke-width: 5.5;
+          stroke-linecap: round;
+        }
+        .ham1 .top {
+          stroke-dasharray: 40 139;
+        }
+        .ham1 .bottom {
+          stroke-dasharray: 40 180;
+        }
+        .ham1.active .top {
+          stroke-dashoffset: -98px;
+        }
+        .ham1.active .bottom {
+          stroke-dashoffset: -138px;
+        }
       }
     }
   }
@@ -282,24 +302,32 @@ html {
   }
 
   #third {
-    padding: 16px 10%;
-    border-bottom: 0.5px solid $border_color;
+    width: 100%;
     background-color: $white;
-    h1 {
+    display: flex;
+    justify-content: center;
+    border-bottom: 0.5px solid $border_color;
+
+    .third-wrap {
+      width: 1300px;
       display: flex;
-      gap: 5px;
-      font-size: 12px;
-    }
-    .home {
-      text-decoration: none;
-      color: #bebfc9;
-    }
-    .home:hover {
-      color: $route_gray;
-    }
-    .allproducts {
-      text-decoration: none;
-      color: $route_gray;
+      padding: 16px 0 16px 0;
+      h1 {
+        display: flex;
+        gap: 5px;
+        font-size: 12px;
+      }
+      .home {
+        text-decoration: none;
+        color: #bebfc9;
+      }
+      .home:hover {
+        color: $route_gray;
+      }
+      .allproducts {
+        text-decoration: none;
+        color: $route_gray;
+      }
     }
   }
   .logo {
@@ -313,7 +341,6 @@ html {
 
 // // // SWIPER
 .carusel {
-  padding: 0 10% 0 10%;
   .swiper {
     border-radius: 1rem;
     height: 600px;
@@ -334,12 +361,12 @@ html {
       height: 100%;
       background-size: cover;
       background-position: center;
+      object-fit: contain;
     }
   }
 }
 
 .wrapper {
-  padding: 0 10%;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
@@ -364,6 +391,7 @@ html {
   .card_image {
     width: 100%;
     height: 65%;
+    object-fit: contain;
   }
   .card_button {
     background-color: $green;
@@ -429,7 +457,7 @@ html {
 .title {
   text-align: center;
   margin-bottom: 50px;
-  margin-top: 50px;
+  margin-top: 100px;
   h1 {
     font-size: 42px;
     color: $route_gray;
@@ -472,7 +500,6 @@ html {
 
 //////////////// About  us /////////////////
 .about_wrapper {
-  padding: 0 10%;
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -593,7 +620,7 @@ html {
 
 ///////////////////Single Productttttttttttttttttttttt ///////////////////////
 .single_product {
-  padding: 0 10%;
+  // padding: 0 10%;
   margin-top: 20px;
   margin-bottom: 10px;
   display: flex;
@@ -645,12 +672,14 @@ html {
       flex-direction: column;
       gap: 30px;
       .desc {
-        span {
-          font-size: 14px;
-        }
         h5 {
           font-size: 14px;
           color: $route_gray;
+          span {
+            font-size: 14px;
+            font-weight: 400;
+            color: $route_gray;
+          }
         }
       }
       span {
@@ -819,7 +848,7 @@ html {
 
 ///////////////////////////////////////Basket
 .container {
-  margin: 50px 10%;
+  margin: 50px 16px;
   padding: 20px;
   border: 1px solid $border_color;
   border-radius: 1rem;
@@ -830,6 +859,8 @@ html {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    object-fit: contain;
+
     #hidden_btns {
       display: none;
     }
@@ -838,6 +869,7 @@ html {
       border: 1px solid $border_color;
       width: 120px;
       height: 150px;
+      object-fit: contain;
     }
   }
   h5 {
@@ -1006,32 +1038,39 @@ html {
 
 // // // // // FOoter
 #footer {
+  width: 100%;
   margin-top: 100px;
   border-top: 1px solid $border_color;
+  background-color: $white;
   #first {
     display: flex;
-    padding: 2% 10%;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     border-bottom: 1px solid $border_color;
-    .f-div {
+    .first-wrap {
+      width: 1300px;
       display: flex;
-      flex-direction: column;
-      gap: 15px;
-      h2 {
-        font-size: 14px;
-        color: $gray;
-        font-weight: normal;
-      }
-      h1 {
-        font-size: 16px;
-        font-weight: 500;
-        color: $route_gray;
-      }
-      h1:hover {
-        color: $green;
-        cursor: pointer;
-        transition: all ease-in-out 0.2s;
+      padding: 0.5% 0;
+      justify-content: space-between;
+      align-items: center;
+      .f-div {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        h2 {
+          font-size: 14px;
+          color: $gray;
+          font-weight: normal;
+        }
+        h1 {
+          font-size: 16px;
+          font-weight: 500;
+          color: $route_gray;
+        }
+        h1:hover {
+          color: $green;
+          cursor: pointer;
+          transition: all ease-in-out 0.2s;
+        }
       }
     }
   }
@@ -1097,11 +1136,40 @@ html {
 @media screen and (max-width: 1300px) {
   .single_product {
     flex-direction: column;
-    padding: 5%;
+    // padding: 5%;
   }
   .wrapper {
     .card {
       width: 32%;
+    }
+  }
+  body {
+    .container-wrapper {
+      width: 95%;
+    }
+  }
+  #main {
+    #first {
+      .first-wrap {
+        width: 90%;
+      }
+    }
+    #second {
+      .second-wrap {
+        width: 90%;
+      }
+    }
+    #third {
+      .third-wrap {
+        width: 90%;
+      }
+    }
+  }
+  #footer {
+    #first {
+      .first-wrap {
+        width: 90%;
+      }
     }
   }
 }
@@ -1117,41 +1185,41 @@ html {
 
 @media screen and (max-width: 1024px) {
   #main {
-    #first {
-      padding: 16px 20px;
-    }
     #second {
-      padding: 20px;
-      .links {
-        display: none;
-      }
-      .buttons {
-        display: flex;
-        align-items: center;
-        .loginbtn {
+      .second-wrap {
+        padding: 20px;
+        .links {
           display: none;
         }
-        .fa-circle-user {
-          display: block;
-        }
-        .fa-bars {
+        .buttons {
           display: flex;
-        }
-        .fa-bars:hover {
-          color: $gray;
-          cursor: pointer;
-          transition: all ease-in-out 0.2s;
+          align-items: center;
+          .loginbtn {
+            display: none;
+          }
+          .fa-circle-user {
+            display: block;
+          }
+          .fa-bars {
+            display: flex;
+          }
+          .fa-bars:hover {
+            color: $gray;
+            cursor: pointer;
+            transition: all ease-in-out 0.2s;
+          }
         }
       }
     }
   }
 
   #footer {
-    // padding-top: 30px;
     #first {
-      padding: 20px;
-      flex-wrap: wrap;
-      gap: 50px;
+      .first-wrap {
+        padding: 20px;
+        flex-wrap: wrap;
+        gap: 50px;
+      }
     }
   }
   .carusel {
@@ -1182,9 +1250,9 @@ html {
       }
     }
   }
-  .single_product {
-    padding: 20px;
-  }
+  // .single_product {
+  //   padding: 20px;
+  // }
   .container {
     margin: 30px;
   }
@@ -1244,25 +1312,27 @@ html {
 @media screen and (max-width: 640px) {
   #main {
     #second {
-      padding: 5px 20px;
-      .logo {
-        width: 40px;
-      }
-      .buttons {
-        .likeButton {
-          padding: 6px;
+      .second-wrap {
+        padding: 5px 20px;
+        .logo {
+          width: 40px;
         }
-        .basket {
-          padding: 6px;
-
-          span {
-            display: none;
+        .buttons {
+          .likeButton {
+            padding: 6px;
           }
-        }
-        .fa-circle-user {
-          padding: 6px;
-          font-size: 16px;
-          font-weight: 300;
+          .basket {
+            padding: 6px;
+
+            span {
+              display: none;
+            }
+          }
+          .fa-circle-user {
+            padding: 6px;
+            font-size: 16px;
+            font-weight: 300;
+          }
         }
       }
     }
@@ -1283,6 +1353,7 @@ html {
     .card_image {
       width: 264px;
       height: 282px;
+      object-fit: contain;
     }
   }
   .req_second {
@@ -1320,13 +1391,15 @@ html {
   #footer {
     padding-bottom: 50px;
     #first {
-      flex-direction: column;
-      gap: 8px;
-      align-items: start;
-      .f-div {
-        h2,
-        h1 {
-          font-size: 12px;
+      .first-wrap {
+        flex-direction: column;
+        gap: 8px;
+        align-items: start;
+        .f-div {
+          h2,
+          h1 {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -1352,7 +1425,7 @@ html {
   }
 
   .title {
-    margin-top: 15px;
+    margin-top: 30px;
     margin-bottom: 10px;
     h1 {
       font-size: 26px;
