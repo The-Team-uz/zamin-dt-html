@@ -95,37 +95,21 @@ window.addEventListener("scroll", function () {
   var fixedDiv = document.getElementById("second");
   var firstDiv = document.getElementById("first");
   var thirdDiv = document.getElementById("third");
-  var contents = document.querySelectorAll(".title");
 
   if (scrollPosition > firstDiv.offsetHeight) {
     if (!thirdDiv) {
+      firstDiv.style.marginBottom = fixedDiv.offsetHeight + "px";
       fixedDiv.classList.add("fixed");
-      contents.forEach((content, index) => {
-        content.style.marginTop = 30 + fixedDiv.offsetHeight + "px";
-      });
     } else {
-      console.log("aaaa");
-      fixedDiv.classList.remove("fixed");
-      if (scrollPosition > fixedDiv.offsetHeight + 20) {
-        fixedDiv.classList.remove("sticky");
-        fixedDiv.classList.add("fixed");
-        contents.forEach((content, index) => {
-          content.style.marginTop = 30 + fixedDiv.offsetHeight + "px";
-        });
-      } else {
-        fixedDiv.classList.add("sticky");
-        fixedDiv.classList.remove("fixed");
-        contents.forEach((content, index) => {
-          content.style.marginTop = "30px";
-        });
-      }
+      third.style.marginTop = fixedDiv.offsetHeight + "px";
     }
   } else {
+    if (thirdDiv) {
+      thirdDiv.style.marginTop = "0px";
+    }
+
     fixedDiv.classList.remove("fixed");
-    fixedDiv.classList.remove("sticky");
-    contents.forEach((content, index) => {
-      content.style.marginTop = "30px";
-    });
+    firstDiv.style.marginBottom = "0px";
   }
 });
 
