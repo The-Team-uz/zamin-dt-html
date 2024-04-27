@@ -826,7 +826,6 @@ html {
   background-color: $white;
   display: flex;
   gap: 20px;
-
   .image {
     display: flex;
     justify-content: space-between;
@@ -838,6 +837,7 @@ html {
       border-radius: 0.5rem;
       border: 1px solid $border_color;
       width: 120px;
+      height: 150px;
     }
   }
   h5 {
