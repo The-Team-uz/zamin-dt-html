@@ -122,6 +122,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const numberDisplay = document.querySelector(".number");
   const totalPrice = document.querySelector(".total_price");
   const tPrice = document.querySelector(".t_price");
+  const offering = document.getElementById("offering");
+  const offering_price = document.getElementById("offering_price");
+
   let count = 1;
   minusBtn.classList.add("minus_unable");
 
@@ -143,11 +146,27 @@ document.addEventListener("DOMContentLoaded", function () {
     numberDisplay.textContent = count;
     let price = count * 7100000;
     price = price.toLocaleString();
-    if(tPrice){
-      tPrice.textContent=price+'som'
-    }
-    else{
-      totalPrice.textContent = count + " " + "/" + " " + price + " som"
+    if (tPrice) {
+      tPrice.textContent = price + " som";
+      if (offering) {
+        offering.value = count * 7100000;
+        let offer = offering.value;
+        offer = (+offer).toLocaleString();
+        offering_price.textContent = offer + " som";
+        offering.addEventListener("input", function () {
+          var currentValue = parseInt(offering.value, 10);
+
+          var maxValue = parseInt(offering.getAttribute("max"), 10);
+          if (currentValue > maxValue) {
+            offering.value = maxValue;
+          }
+          let offer = offering.value;
+          offer = (+offer).toLocaleString();
+          offering_price.textContent = offer + " som";
+        });
+      }
+    } else {
+      totalPrice.textContent = count + " " + "/" + " " + price + " som";
     }
     if (count == 1) {
       minusBtn.classList.remove("minus_able");
