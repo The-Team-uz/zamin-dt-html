@@ -377,6 +377,7 @@ html {
     height: 36px;
     transition: all 0.2s;
     border-radius: 5px;
+    cursor: pointer;
   }
   .card_button:hover {
     background-color: $green_pale;
@@ -1351,6 +1352,8 @@ html {
   }
 
   .title {
+    margin-top: 15px;
+    margin-bottom: 10px;
     h1 {
       font-size: 26px;
     }
@@ -1372,6 +1375,7 @@ html {
     }
   }
   .container {
+    margin: 35px 15px 0px 15px;
     .infos {
       .third_info {
         .info_btn {

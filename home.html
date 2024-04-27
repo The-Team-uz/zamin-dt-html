@@ -127,7 +127,7 @@
           </p>
           <p class="card_price" onclick="openNewPage()">8 000 000 som/sht</p>
           <div class="card_footer">
-            <button class="card_button">Add to basket</button>
+            <button class="card_button" onclick="basket()">Add to basket</button>
             <i class="fa-regular fa-heart heart"></i>
             <i class="fa-solid fa-heart fill-heart" style="display: none"></i>
           </div>
@@ -154,7 +154,7 @@
           </p>
           <p class="card_price" onclick="openNewPage()">8 000 000 som/sht</p>
           <div class="card_footer">
-            <button class="card_button">Add to basket</button>
+            <button class="card_button" onclick="basket()">Add to basket</button>
             <i class="fa-regular fa-heart heart"></i>
             <i class="fa-solid fa-heart fill-heart" style="display: none"></i>
           </div>
@@ -173,7 +173,7 @@
           </p>
           <p class="card_price" onclick="openNewPage()">8 000 000 som/sht</p>
           <div class="card_footer">
-            <button class="card_button">Add to basket</button>
+            <button class="card_button" onclick="basket()">Add to basket</button>
             <i class="fa-regular fa-heart heart"></i>
             <i class="fa-solid fa-heart fill-heart" style="display: none"></i>
           </div>
@@ -342,7 +342,7 @@
     buttonBuy.classList.add("card_button");
     buttonBuy.textContent = "Add to basket";
     buttonBuy.addEventListener("click", () => {
-      alert(`Вы хотели бы купить ${element.desc} за ${formatPrice}`);
+      window.location.href='/basket.html'
     });
 
     const heart = document.createElement("i");

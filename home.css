@@ -363,6 +363,7 @@ html {
   height: 36px;
   transition: all 0.2s;
   border-radius: 5px;
+  cursor: pointer;
 }
 .wrapper .card_button:hover {
   background-color: #fadb6e;
@@ -1276,6 +1277,10 @@ html {
     height: 3px;
     border-radius: 10px;
   }
+  .title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
   .title h1 {
     font-size: 26px;
   }
@@ -1290,6 +1295,9 @@ html {
   }
   .single_product .basket_wrapper {
     width: 100%;
+  }
+  .container {
+    margin: 35px 15px 0px 15px;
   }
   .container .infos .third_info .info_btn {
     width: 100%;
