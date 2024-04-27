@@ -106,7 +106,7 @@ html {
     .first-wrap {
       display: flex;
       justify-content: space-between;
-      padding: 16px;
+      padding: 16px 0;
       color: $white;
       font-size: 12px;
       width: 1300px;
@@ -131,7 +131,7 @@ html {
     .second-wrap {
       width: 1300px;
       display: flex;
-      padding: 16px 0 16px 0;
+      padding: 16px 0;
       align-items: center;
       justify-content: space-between;
       .logo {
@@ -1145,30 +1145,30 @@ html {
   }
   body {
     .container-wrapper {
-      width: 95%;
+      width: 96%;
     }
   }
   #main {
     #first {
       .first-wrap {
-        width: 90%;
+        width: 96%;
       }
     }
     #second {
       .second-wrap {
-        width: 90%;
+        width: 96%;
       }
     }
     #third {
       .third-wrap {
-        width: 90%;
+        width: 96%;
       }
     }
   }
   #footer {
     #first {
       .first-wrap {
-        width: 90%;
+        width: 96%;
       }
     }
   }
@@ -1187,7 +1187,7 @@ html {
   #main {
     #second {
       .second-wrap {
-        padding: 20px;
+        padding: 16px 0;
         .links {
           display: none;
         }
@@ -1313,7 +1313,7 @@ html {
   #main {
     #second {
       .second-wrap {
-        padding: 5px 20px;
+        padding: 5px 0;
         .logo {
           width: 40px;
         }
