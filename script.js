@@ -29,15 +29,13 @@
 
 window.addEventListener("scroll", function () {
   var scrollPosition = window.scrollY;
-  var fixedDiv = document.getElementById("second");
+  // var fixedDiv = document.getElementById("second");
   var firstDiv = document.getElementById("first");
   var hidingMenu = document.getElementById("hide");
 
   if (scrollPosition > firstDiv.offsetHeight) {
-    fixedDiv.classList.add("fixed");
     hidingMenu.classList.add("fixedMenu");
   } else {
-    fixedDiv.classList.remove("fixed");
     hidingMenu.classList.remove("fixedMenu");
   }
 });
@@ -84,11 +82,14 @@ window.addEventListener("scroll", function () {
   var thirdDiv = document.getElementById("third");
 
   if (scrollPosition > firstDiv.offsetHeight) {
-    if (!thirdDiv) {
-      firstDiv.style.marginBottom = fixedDiv.offsetHeight + "px";
+    if (thirdDiv) {
+      console.log("bor");
+      third.style.marginTop = fixedDiv.offsetHeight + "px";
       fixedDiv.classList.add("fixed");
     } else {
-      third.style.marginTop = fixedDiv.offsetHeight + "px";
+      console.log("yoq");
+      firstDiv.style.marginBottom = fixedDiv.offsetHeight + "px";
+      fixedDiv.classList.add("fixed");
     }
   } else {
     if (thirdDiv) {
