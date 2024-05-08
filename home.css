@@ -1072,7 +1072,7 @@ html {
 .foot #footer #first .first-wrap {
   width: 1300px;
   display: flex;
-  padding: 0.5% 0;
+  padding: 1% 0;
   justify-content: space-between;
   align-items: center;
 }
@@ -1175,7 +1175,7 @@ html {
   #main #third .third-wrap {
     width: 96%;
   }
-  #footer #first .first-wrap {
+  .foot #footer #first .first-wrap {
     width: 96%;
   }
 }
@@ -1276,6 +1276,9 @@ html {
     gap: 5px;
     justify-content: space-between;
   }
+  .foot #footer #first {
+    padding: 15px;
+  }
 }
 @media screen and (max-width: 765px) {
   .single_product .product_wrapper {
@@ -1361,23 +1364,27 @@ html {
   .mini {
     display: none;
   }
-  #footer {
+  .foot #footer {
     padding-bottom: 50px;
   }
-  #footer #first .first-wrap {
+  .foot #footer #first {
+    display: flex;
+    align-items: start;
+  }
+  .foot #footer #first .first-wrap {
     flex-direction: column;
     gap: 8px;
     align-items: start;
   }
-  #footer #first .first-wrap .f-div h2,
-  #footer #first .first-wrap .f-div h1 {
+  .foot #footer #first .first-wrap .f-div h2,
+  .foot #footer #first .first-wrap .f-div h1 {
     font-size: 12px;
   }
-  #footer #second {
+  .foot #footer #second {
     padding: 20px;
     text-align: center;
   }
-  #footer #second h1 {
+  .foot #footer #second h1 {
     font-size: 12px;
   }
   .carusel {
