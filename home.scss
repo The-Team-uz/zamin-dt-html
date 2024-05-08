@@ -17,6 +17,61 @@ $route_gray: #48545d;
   background-color: $green_pale;
   color: #fff;
 }
+.videos .videos-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+}
+
+.videos .videos-col {
+  width: calc(100% / 1);
+  padding: 12px;
+}
+
+@media (min-width: 576px) {
+  .videos .videos-col {
+    width: calc(100% / 2);
+  }
+}
+
+@media (min-width: 992px) {
+  .videos .videos-col {
+    width: calc(100% / 3);
+  }
+}
+
+@media (min-width: 1200px) {
+  .videos .videos-col {
+    width: calc(100% / 3);
+  }
+}
+@media (min-width: 640px) {
+  .video {
+    padding: 16px 16px 24px;
+  }
+}
+.video:hover {
+  box-shadow: 0 2px 8px #00000026;
+}
+.video {
+  background: $white;
+  border: 1px solid $border_color;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1;
+  padding: 8px 8px 14px;
+  transition: box-shadow 0.15s;
+}
+.video-iframe {
+  border-radius: 12px;
+  height: 274px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  width: 100%;
+}
 
 body {
   font-family: "Roboto", sans-serif;
